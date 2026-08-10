@@ -1,0 +1,172 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - complementary [ref=f6e3]:
+      - link "Lifecor" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f6e10]:
+        - link "Dashboard" [ref=f6e11] [cursor=pointer]:
+          - /url: /partner
+        - link "Lead Pipeline" [ref=f6e17] [cursor=pointer]:
+          - /url: /partner/pipeline
+        - link "Clients" [ref=f6e22] [cursor=pointer]:
+          - /url: /partner/clients
+        - link "Quote Generator" [ref=f6e28] [cursor=pointer]:
+          - /url: /partner/quote
+        - link "Analytics" [ref=f6e31] [cursor=pointer]:
+          - /url: /partner/analytics
+      - generic [ref=f6e35]:
+        - generic [ref=f6e36]: SM
+        - generic [ref=f6e38]:
+          - generic [ref=f6e39]: Sarah Mitchell
+          - generic [ref=f6e40]: Senior Advisor
+        - link [ref=f6e41] [cursor=pointer]:
+          - /url: /
+    - main [ref=f6e46]:
+      - generic [ref=f6e47]:
+        - generic [ref=f6e48]:
+          - heading "Lead Pipeline" [level=1] [ref=f6e49]
+          - paragraph [ref=f6e50]: Drag and drop leads between stages to update their status
+        - generic [ref=f6e51]:
+          - generic [ref=f6e52]:
+            - generic [ref=f6e53]:
+              - heading "New" [level=3] [ref=f6e54]
+              - generic [ref=f6e55]: "5"
+            - generic [ref=f6e56]:
+              - button "DW $500K David Williams Illinois Jan 22, 2025" [ref=f6e57]:
+                - generic [ref=f6e58]:
+                  - generic [ref=f6e59]: DW
+                  - generic [ref=f6e60]: $500K
+                - generic [ref=f6e61]: David Williams
+                - generic [ref=f6e62]:
+                  - generic [ref=f6e63]: Illinois
+                  - generic [ref=f6e67]: Jan 22, 2025
+              - button "LJ $250K Lisa Johnson Arizona Jan 23, 2025" [ref=f6e70]:
+                - generic [ref=f6e71]:
+                  - generic [ref=f6e72]: LJ
+                  - generic [ref=f6e73]: $250K
+                - generic [ref=f6e74]: Lisa Johnson
+                - generic [ref=f6e75]:
+                  - generic [ref=f6e76]: Arizona
+                  - generic [ref=f6e80]: Jan 23, 2025
+              - button "AM $500K Amanda Martinez Nevada Jan 24, 2025" [ref=f6e83]:
+                - generic [ref=f6e84]:
+                  - generic [ref=f6e85]: AM
+                  - generic [ref=f6e86]: $500K
+                - generic [ref=f6e87]: Amanda Martinez
+                - generic [ref=f6e88]:
+                  - generic [ref=f6e89]: Nevada
+                  - generic [ref=f6e93]: Jan 24, 2025
+              - button "MT $250K Michelle Taylor Oregon Jan 25, 2025" [ref=f6e96]:
+                - generic [ref=f6e97]:
+                  - generic [ref=f6e98]: MT
+                  - generic [ref=f6e99]: $250K
+                - generic [ref=f6e100]: Michelle Taylor
+                - generic [ref=f6e101]:
+                  - generic [ref=f6e102]: Oregon
+                  - generic [ref=f6e106]: Jan 25, 2025
+              - button "AW $250K Andrew White Ohio Jan 26, 2025" [ref=f6e109]:
+                - generic [ref=f6e110]:
+                  - generic [ref=f6e111]: AW
+                  - generic [ref=f6e112]: $250K
+                - generic [ref=f6e113]: Andrew White
+                - generic [ref=f6e114]:
+                  - generic [ref=f6e115]: Ohio
+                  - generic [ref=f6e119]: Jan 26, 2025
+          - generic [ref=f6e122]:
+            - generic [ref=f6e123]:
+              - heading "Contacted" [level=3] [ref=f6e124]
+              - generic [ref=f6e125]: "3"
+            - generic [ref=f6e126]:
+              - button "EC $1.0M Emily Chen New York Jan 20, 2025" [ref=f6e127]:
+                - generic [ref=f6e128]:
+                  - generic [ref=f6e129]: EC
+                  - generic [ref=f6e130]: $1.0M
+                - generic [ref=f6e131]: Emily Chen
+                - generic [ref=f6e132]:
+                  - generic [ref=f6e133]: New York
+                  - generic [ref=f6e137]: Jan 20, 2025
+              - button "JD $250K Jennifer Davis Colorado Jan 21, 2025" [ref=f6e140]:
+                - generic [ref=f6e141]:
+                  - generic [ref=f6e142]: JD
+                  - generic [ref=f6e143]: $250K
+                - generic [ref=f6e144]: Jennifer Davis
+                - generic [ref=f6e145]:
+                  - generic [ref=f6e146]: Colorado
+                  - generic [ref=f6e150]: Jan 21, 2025
+              - button "KA $500K Kevin Anderson Michigan Jan 17, 2025" [ref=f6e153]:
+                - generic [ref=f6e154]:
+                  - generic [ref=f6e155]: KA
+                  - generic [ref=f6e156]: $500K
+                - generic [ref=f6e157]: Kevin Anderson
+                - generic [ref=f6e158]:
+                  - generic [ref=f6e159]: Michigan
+                  - generic [ref=f6e163]: Jan 17, 2025
+          - generic [ref=f6e166]:
+            - generic [ref=f6e167]:
+              - heading "In Review" [level=3] [ref=f6e168]
+              - generic [ref=f6e169]: "3"
+            - generic [ref=f6e170]:
+              - button "MT $250K Michael Torres Florida Jan 18, 2025" [ref=f6e171]:
+                - generic [ref=f6e172]:
+                  - generic [ref=f6e173]: MT
+                  - generic [ref=f6e174]: $250K
+                - generic [ref=f6e175]: Michael Torres
+                - generic [ref=f6e176]:
+                  - generic [ref=f6e177]: Florida
+                  - generic [ref=f6e181]: Jan 18, 2025
+              - button "RB $500K Robert Brown Washington Jan 19, 2025" [ref=f6e184]:
+                - generic [ref=f6e185]:
+                  - generic [ref=f6e186]: RB
+                  - generic [ref=f6e187]: $500K
+                - generic [ref=f6e188]: Robert Brown
+                - generic [ref=f6e189]:
+                  - generic [ref=f6e190]: Washington
+                  - generic [ref=f6e194]: Jan 19, 2025
+              - button "BT $500K Brian Thomas Virginia Jan 16, 2025" [ref=f6e197]:
+                - generic [ref=f6e198]:
+                  - generic [ref=f6e199]: BT
+                  - generic [ref=f6e200]: $500K
+                - generic [ref=f6e201]: Brian Thomas
+                - generic [ref=f6e202]:
+                  - generic [ref=f6e203]: Virginia
+                  - generic [ref=f6e207]: Jan 16, 2025
+          - generic [ref=f6e210]:
+            - generic [ref=f6e211]:
+              - heading "Approved" [level=3] [ref=f6e212]
+              - generic [ref=f6e213]: "4"
+            - generic [ref=f6e214]:
+              - button "JC $500K James Carter California Jan 10, 2025" [ref=f6e215]:
+                - generic [ref=f6e216]:
+                  - generic [ref=f6e217]: JC
+                  - generic [ref=f6e218]: $500K
+                - generic [ref=f6e219]: James Carter
+                - generic [ref=f6e220]:
+                  - generic [ref=f6e221]: California
+                  - generic [ref=f6e225]: Jan 10, 2025
+              - button "SM $1.0M Sarah Mitchell Texas Jan 15, 2025" [ref=f6e228]:
+                - generic [ref=f6e229]:
+                  - generic [ref=f6e230]: SM
+                  - generic [ref=f6e231]: $1.0M
+                - generic [ref=f6e232]: Sarah Mitchell
+                - generic [ref=f6e233]:
+                  - generic [ref=f6e234]: Texas
+                  - generic [ref=f6e238]: Jan 15, 2025
+              - button "CW $1.0M Christopher Wilson Georgia Jan 14, 2025" [ref=f6e241]:
+                - generic [ref=f6e242]:
+                  - generic [ref=f6e243]: CW
+                  - generic [ref=f6e244]: $1.0M
+                - generic [ref=f6e245]: Christopher Wilson
+                - generic [ref=f6e246]:
+                  - generic [ref=f6e247]: Georgia
+                  - generic [ref=f6e251]: Jan 14, 2025
+              - button "SJ $500K Stephanie Jackson Minnesota Jan 13, 2025" [ref=f6e254]:
+                - generic [ref=f6e255]:
+                  - generic [ref=f6e256]: SJ
+                  - generic [ref=f6e257]: $500K
+                - generic [ref=f6e258]: Stephanie Jackson
+                - generic [ref=f6e259]:
+                  - generic [ref=f6e260]: Minnesota
+                  - generic [ref=f6e264]: Jan 13, 2025
+        - status [ref=f6e267]
+  - region "Notifications alt+T"
+  - alert [ref=f6e268]

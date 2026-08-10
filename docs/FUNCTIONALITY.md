@@ -1,340 +1,282 @@
-# Lifecor Demo Platform — Step-by-Step Functionality
+# Platform Functionality
 
-> **What this site does right now.** Everything runs on mock data — no real backend, no database. The goal is a polished, investor-ready demo.
-
----
-
-## 1. Landing Page (`/`)
-
-The entry point of the site. Visitors see a full marketing page with:
-
-1. **Navbar** — Logo, theme toggle (dark/light), links to "Start Demo" and "Partner Experience"
-2. **Hero Section**
-   - Headline: *"Life Insurance Built For The Modern World"*
-   - Two CTA buttons:
-     - **Start Demo** → goes to `/demo` (consumer flow)
-     - **Partner Experience** → goes to `/partner` (agent/broker flow)
-   - Quick stats: *3 min to get covered · 98% Digital · $0 Paperwork*
-3. **Problem Section** — Side-by-side: old insurance pain points vs. Lifecor advantages
-4. **Solution Section** — Feature highlights with icons
-5. **How It Works** — Visual 3-step walkthrough
-6. **Consumer Benefits** — Value props for end users
-7. **Partner Benefits** — Value props for agents/brokers
-8. **Final CTA Section** — Repeats action buttons at bottom
+Lifecor is a digital-first life insurance platform with three distinct experiences: a consumer application flow, a partner portal for agents and brokers, and an admin dashboard for internal operations. All data is served from static mock datasets — the platform is designed as a high-fidelity demo.
 
 ---
 
-## 2. Consumer Flow — Direct-to-Consumer (DTC) (`/demo`)
+## Landing Page
 
-A 7-step guided application. A visual progress bar shows which step the user is on. State is stored in memory (Zustand) as the user moves forward.
+The public-facing homepage introduces Lifecor's value proposition and directs visitors into the appropriate flow.
+
+### Sections
+
+| Section | Purpose |
+|---|---|
+| Navigation | Logo, theme toggle, links to consumer demo and partner portal |
+| Hero | Primary headline, two CTA buttons, three quick-stat callouts |
+| Problem | Side-by-side comparison of traditional insurance vs. Lifecor |
+| Solution | Three speed, digital, and AI capability highlights |
+| How It Works | Four-step visual walkthrough |
+| Consumer Benefits | Six feature cards for end users |
+| Partner Benefits | Split-layout section with live stats preview |
+| Footer CTA | Repeated action buttons and footer links |
+
+### Navigation CTAs
+
+- **Start Demo** → `/demo` (consumer application flow)
+- **Partner Experience** → `/partner` (agent and broker portal)
 
 ---
 
-### Step 1 — Welcome (`/demo`)
+## Consumer Application — 7-Step Flow (`/demo`)
 
-User fills in basic info:
+A guided, step-by-step application journey. A progress bar persists across all steps. User input is held in an in-memory session store (Zustand) and carried forward through each screen.
 
-| Field | Type | Rules |
-|-------|------|-------|
-| Name | Text | Min 2 characters |
-| Age | Number | 18–75 |
-| State | Dropdown | All 50 US states |
+---
 
-- Validated with Zod before allowing next step
-- Data saved to session store
+### Step 1 — Personal Information (`/demo`)
+
+The entry point. Collects basic eligibility data before any personalisation occurs.
+
+| Field | Validation |
+|---|---|
+| Full Name | Required, minimum 2 characters |
+| Age | Required, 18–75 |
+| State | Required, selected from all 50 US states |
+
+All fields are validated with Zod before the user can advance.
 
 ---
 
 ### Step 2 — Lifestyle Assessment (`/demo/lifestyle`)
 
-4 toggle-based questions. A progress ring (0/4 → 4/4) tracks completion. All 4 must be answered to continue.
+Four toggle-question cards covering the key risk indicators used in underwriting. A progress ring (0 of 4 → 4 of 4) tracks completion. All four questions must be answered before continuing.
 
 | Question | Options |
-|----------|---------|
-| Smoker? | Yes / No |
-| Health Conditions | None / Minor / Major |
-| Annual Income | Under $50K / $50K–$100K / $100K–$200K / Over $200K |
-| Dependents | 0 / 1 / 2 / 3+ |
-
-- Clicking a card selects it and highlights it visually
-- Answers saved to session store
+|---|---|
+| Smoking status | Yes / No |
+| Existing health conditions | None / Minor / Major |
+| Annual income | Under $50K / $50K–$100K / $100K–$200K / Over $200K |
+| Number of dependents | 0 / 1 / 2 / 3 or more |
 
 ---
 
-### Step 3 — Eligibility Engine (`/demo/eligibility`)
+### Step 3 — Eligibility Check (`/demo/eligibility`)
 
-**Phase 1 — Loading (3 seconds):**
+A two-phase screen that simulates real-time underwriting.
 
-Shows animated status messages in sequence:
-1. "Analyzing your profile..."
-2. "Checking risk factors..."
-3. "Calculating coverage options..."
+**Loading phase (3 seconds)**
 
-**Phase 2 — Results:**
+Three sequential status messages indicate progress:
+1. Analysing your profile
+2. Checking risk factors
+3. Calculating coverage options
 
-Mock AI calculates a risk score using this logic:
-- Smoking → +3 points
-- Major conditions → +3 points
-- Minor conditions → +1 point
-- Age > 55 → +2 points
-- Age > 45 → +1 point
+**Results phase**
 
-**Risk Tiers:**
-| Points | Tier | Badge Color |
-|--------|------|-------------|
+A point-based algorithm produces a risk classification and confidence score.
+
+| Risk Points | Classification | Badge |
+|---|---|---|
 | 0–1 | Ultra-Preferred | Green |
 | 2–3 | Preferred | Blue |
 | 4+ | Standard | Amber |
 
-**Confidence Score:**
-- Ultra-Preferred: ~96%
-- Preferred: ~91%
-- Standard: ~84%
-- (Small random variance added each time)
+Confidence scores by tier: Ultra-Preferred ~96%, Preferred ~91%, Standard ~84% — with minor random variance applied per session.
 
-Page shows: green checkmark animation, risk tier badge, confidence score bar, eligible coverage range ($250K–$1M)
+The screen displays: risk classification badge, animated confidence score bar, and eligible coverage range ($250,000–$1,000,000).
 
 ---
 
-### Step 4 — Instant Quotes (`/demo/quotes`)
+### Step 4 — Plan Comparison (`/demo/quotes`)
 
-Displays 3 plan cards side-by-side:
+Three plans presented side by side. The AI-recommended plan is highlighted automatically based on the applicant's income and dependents.
 
-| Plan | Price | Coverage | Highlights |
-|------|-------|----------|------------|
-| Basic Protection | $18/mo | $250K | 10-year term, no exam, instant approval |
-| Plus Protection | $29/mo | $500K | + Terminal illness rider |
-| Premium Protection | $47/mo | $1M | 30-year term, disability waiver |
+| Plan | Monthly Premium | Coverage |
+|---|---|---|
+| Basic Protection | $18/mo | $250,000 |
+| Plus Protection | $29/mo | $500,000 |
+| Premium Protection | $47/mo | $1,000,000 |
 
-- AI pre-selects the recommended plan (based on income + dependents)
-- User can click any card to select it — selected card glows
-- Selection saved to session store
+Selecting a plan highlights the card. The selection is saved to the session store.
 
 ---
 
 ### Step 5 — AI Recommendation (`/demo/recommendation`)
 
-Shows a bot message (with sparkle icon) that is dynamically generated from the user's profile:
+A dynamically generated recommendation message is displayed, personalised to the applicant's profile:
 
 > *"Based on your profile, Premium Protection provides the best balance of affordability and coverage to protect your 2 dependents at ultra-preferred rates."*
 
-- Recommended plan card shown below with glow border
-- User clicks "Continue" to proceed
+The recommended plan card appears below with a glowing border. The applicant confirms and continues.
 
 ---
 
 ### Step 6 — Application Summary (`/demo/summary`)
 
-Review page showing everything collected:
+A full review screen before submission.
 
-- Name, age, state
-- Selected plan name
-- Coverage amount
+Displayed information:
+- Applicant name, age, and state
+- Selected plan and coverage amount
 - Monthly premium
 - Risk classification badge
 
-**Submit button:**
-- Shows "Submitting Application..." spinner for 1.8 seconds
-- Then navigates to approval page
+The Submit button triggers a 1.8-second loading state ("Submitting Application…") before advancing to confirmation.
 
 ---
 
-### Step 7 — Approval (`/demo/approved`)
+### Step 7 — Approval Confirmation (`/demo/approved`)
 
-Celebration screen:
-- **Confetti animation** (4 seconds)
-- Large green checkmark
-- *"[Name], you're Approved!"*
-- Next steps timeline:
-  1. ✅ Welcome Email Sent
-  2. ⏳ Policy Documents (24 hours)
-  3. ⏳ Coverage Starts (Immediate)
-- Button: **Explore Partner Experience** → `/partner`
+The final screen celebrates the approved application.
+
+- Confetti animation plays for 4 seconds
+- Personalised approval message: *"[Name], you're Approved!"*
+- Next-steps timeline:
+  1. Welcome email sent (complete)
+  2. Policy documents ready within 24 hours (pending)
+  3. Coverage active immediately (pending)
+- CTA: **Explore Partner Experience** → `/partner`
 
 ---
 
-## 3. Distribution Partner Flow (`/partner`)
+## Partner Portal (`/partner`)
 
-For insurance agents and brokers. Has a sidebar navigation with 4 sections.
+For insurance agents and brokers. A sidebar navigation provides access to five sections.
 
 ---
 
 ### Dashboard (`/partner`)
 
-Overview of the agent's book of business:
+Headline metrics and recent activity at a glance.
 
-**4 KPI Cards:**
-| Metric | Value | Trend |
-|--------|-------|-------|
+**KPI Cards**
+
+| Metric | Value | Change |
+|---|---|---|
 | Total Leads | 247 | +12% this month |
 | Conversion Rate | 34.2% | +4.1% vs last month |
 | Applications | 89 | +7 this week |
 | Policies Issued | 61 | +8 this month |
 
-**Charts & Activity:**
-- Area chart: Policies issued over the last 12 months
-- Recent activity feed (5 items): e.g., "James Carter policy approved · 2 min ago"
+Below the KPIs: a 12-month area chart of policies issued, and a live activity feed showing the five most recent events (e.g. approvals, new leads).
 
 ---
 
 ### Lead Pipeline (`/partner/pipeline`)
 
-Kanban board with 4 columns:
+A drag-and-drop Kanban board for tracking leads through the sales process.
 
-| Column | Meaning |
-|--------|---------|
-| New | Fresh leads not yet contacted |
-| Contacted | Reached out, waiting for response |
+| Column | Stage |
+|---|---|
+| New | Uncontacted leads |
+| Contacted | Reached out, awaiting response |
 | In Review | Application in progress |
 | Approved | Deal closed |
 
-- **Drag and drop** leads between columns (powered by dnd-kit)
-- Each lead card shows name + contact info
-- State resets on page refresh (no persistence)
+Leads can be dragged between columns. Each card shows the lead's name and contact details. Board state resets on page refresh.
 
 ---
 
 ### Clients (`/partner/clients`)
 
-Searchable table of all 20 mock clients:
+A searchable table of all 20 client records. The search bar filters by name or state in real time.
 
-- **Search bar** — filters by name or state
-- **Table columns:** Name, Email, State, Age, Plan, Coverage, Premium, Status
-- Status badges: Green (Active) / Amber (Pending) / Red (Lapsed)
-- **Click a row** → opens client detail page
+**Table columns:** Name, Email, State, Age, Plan, Coverage, Monthly Premium, Status
+
+Status badges:
+- **Active** — green
+- **Pending** — amber
+- **Lapsed** — red
+
+Clicking a row opens the client detail page.
 
 ---
 
 ### Client Detail (`/partner/clients/[id]`)
 
-Full profile for a single client:
+A full profile view for an individual client.
 
-- **Profile card:** Avatar, name, age, state, email, phone, client since date
-- **Policy card:** Plan, coverage amount, premium, type (term-10/20/30, whole-life), status, issued/expiry dates
-- **Notes timeline:** 3 timestamped notes showing agent interaction history
+- **Profile card** — Name, age, state, email, phone, client-since date
+- **Policy card** — Plan, coverage amount, monthly premium, policy type (term 10/20/30 or whole life), status, issued and expiry dates
+- **Notes timeline** — Three timestamped agent interaction notes
 
 ---
 
-### Quote Generator (`/partner/quote`)
+### Quick Quote (`/partner/quote`)
 
-Quick tool to generate quotes for a prospect:
+Generates instant quotes for a prospect without requiring them to go through the consumer flow.
 
-1. Agent enters: Age, State, Annual Income
-2. Clicks **Generate Quotes** — 2 second loading animation
-3. Results appear with:
-   - Confidence score
-   - 3 plan cards (same as consumer flow)
-   - Agent can select a preferred plan
+Inputs: Age, State, Annual Income
+
+After a 2-second calculation simulation, results display:
+- Confidence score
+- Three plan cards with selection capability
 
 ---
 
 ### Analytics (`/partner/analytics`)
 
-Three charts with a time range selector (3M / 6M / 1Y):
+Performance charts with a 3M / 6M / 1Y time range selector.
 
-| Chart | Type | Data |
-|-------|------|------|
-| Monthly Policies Issued | Bar chart | Count per month |
-| Conversion Trend | Line chart | Rate % per month |
-| Revenue Estimate | Area chart | Estimated commission $ |
+| Chart | Type | Metric |
+|---|---|---|
+| Monthly Policies Issued | Bar | Count per month |
+| Conversion Rate Trend | Line | Rate % per month |
+| Revenue Estimate | Area | Estimated monthly commission |
 
-- All data is from `analytics.json` mock file
-- Charts adapt to dark/light mode automatically
-
----
-
-## 4. Admin Dashboard (`/admin`)
-
-System-wide view for platform administrators.
+All charts adapt automatically to light and dark mode.
 
 ---
 
-### Admin Dashboard (`/admin`)
+## Admin Dashboard (`/admin`)
 
-**4 KPI Cards:**
+System-wide visibility for platform administrators. Sidebar navigation provides access to three sections.
+
+---
+
+### Dashboard (`/admin`)
+
+**KPI Cards**
+
 | Metric | Source |
-|--------|--------|
+|---|---|
 | Total Policies | Count of active policies |
-| Annual Premium | Sum of all monthly premiums × 12 |
-| Active Agents | Count from agents.json |
-| Pending Applications | Count of submitted + under-review |
+| Annual Premium Volume | Sum of all monthly premiums × 12 |
+| Active Agents | Count from agent records |
+| Pending Applications | Submitted + under-review count |
 
-- Line chart: System-wide policy volume (last 12 months)
+Below the KPIs: a 12-month line chart showing system-wide policy issuance volume.
 
 ---
 
 ### Policy Management (`/admin/policies`)
 
-Table of all policies across the platform:
+A full table of all platform policies with filtering and export.
 
-- **Filter dropdown** — All / Active / Pending / Lapsed / Cancelled
-- **Table columns:** Policy ID, Customer, Plan, Type, Coverage, Premium, Status, Issued Date
-- **Export CSV button** — shows a toast notification (no actual file download)
-
----
-
-### User Management (`/admin/users`)
-
-Table of all agents/team members:
-
-- **Columns:** Name, Email, Role, Total Leads, Conversion Rate, Policies Issued, Join Date
-- **Role badges:** Admin (purple) / Agent (blue) / Viewer (gray)
-- **Invite User button** — opens a modal form (submission shows toast, doesn't save)
+- **Status filter** — All / Active / Pending / Lapsed / Cancelled
+- **Table columns** — Policy ID, Customer, Plan, Type, Coverage, Premium, Status, Issue Date
+- **Export CSV** — Triggers a confirmation toast (file download not implemented in demo)
 
 ---
 
-## 5. Site-Wide Features
+### Team Management (`/admin/users`)
 
-These work everywhere:
+Agent and administrator records with role management.
 
-| Feature | How it works |
-|---------|-------------|
-| **Dark / Light Mode** | Toggle in navbar. Preference stored via next-themes. Default is dark. |
-| **Responsive Design** | Mobile sidebar becomes a sheet drawer. Tables scroll horizontally. |
-| **Toast Notifications** | Shown for actions like "Export CSV", "Invite sent" (via Sonner) |
-| **Form Validation** | Zod schemas validate before any step advances |
-| **Animations** | Framer Motion on page transitions, card entrances, progress bars |
-| **Skeleton Loaders** | Shown during simulated loading states |
+- **Table columns** — Name, Email, Role, Total Leads, Conversion Rate, Policies Issued, Join Date
+- **Role badges** — Admin (purple), Agent (blue), Viewer (grey)
+- **Invite User** — Opens a modal for entering email and assigning a role; submission triggers a confirmation toast
 
 ---
 
-## 6. What Is NOT Real
+## Site-Wide Features
 
-| Feature | Reality |
-|---------|---------|
-| AI underwriting | Point-based algorithm in `lib/mock-ai.ts` |
-| Quote prices | Hardcoded ($18 / $29 / $47) |
-| User accounts | No auth — anyone can access any page |
-| Data persistence | Resets on refresh (Zustand in-memory only) |
-| Email sending | Not implemented |
-| CSV export | Shows toast only, no file |
-| Invite user | Shows toast only, no save |
-| Drag-drop pipeline | Resets on refresh |
-| Payment processing | Not present |
-
----
-
-## 7. Route Map Summary
-
-```
-/                           → Landing page
-/demo                       → DTC Step 1: Welcome
-/demo/lifestyle             → DTC Step 2: Lifestyle questions
-/demo/eligibility           → DTC Step 3: Eligibility check
-/demo/quotes                → DTC Step 4: Quote selection
-/demo/recommendation        → DTC Step 5: AI recommendation
-/demo/summary               → DTC Step 6: Application review
-/demo/approved              → DTC Step 7: Approval confirmation
-
-/partner                    → Distribution dashboard
-/partner/pipeline           → Lead kanban board
-/partner/clients            → Client list
-/partner/clients/[id]       → Individual client detail
-/partner/quote              → Quick quote tool
-/partner/analytics          → Charts & analytics
-
-/admin                      → Admin dashboard
-/admin/policies             → Policy management table
-/admin/users                → User/agent management
-/admin/reports              → (Reports page)
-```
+| Feature | Implementation |
+|---|---|
+| Dark / Light Mode | Toggle in navbar; default is dark; preference persists via next-themes |
+| Responsive Design | Mobile sidebar becomes a sheet drawer; tables scroll horizontally |
+| Form Validation | Zod schemas validated client-side before any step advances |
+| Toast Notifications | Confirmation messages for export, invite, and submit actions via Sonner |
+| Animations | Framer Motion on page transitions, card entrances, and progress elements |
+| Loading States | Skeleton loaders and spinner overlays during simulated processing |

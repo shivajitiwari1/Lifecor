@@ -42,7 +42,7 @@ export default function AnalyticsPage() {
               <CartesianGrid strokeDasharray="3 3" stroke={c.grid} />
               <XAxis dataKey="month" tick={{ fill: c.tick, fontSize: 12 }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fill: c.tick, fontSize: 12 }} axisLine={false} tickLine={false} />
-              <Tooltip contentStyle={tooltipStyle} />
+              <Tooltip contentStyle={tooltipStyle} cursor={{ fill: 'transparent', stroke: '#3B82F6', strokeWidth: 1.5, radius: 4 }} />
               <Bar dataKey="policies" fill="#3B82F6" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

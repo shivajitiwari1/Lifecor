@@ -1,0 +1,67 @@
+- generic [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - banner [ref=f4e3]:
+      - link "Lifecor" [ref=f4e4] [cursor=pointer]:
+        - /url: /
+    - main [ref=f4e9]:
+      - generic [ref=f4e294]:
+        - generic [ref=f4e295]: Welcome
+        - generic [ref=f4e302]: Lifestyle
+        - generic [ref=f4e309]: Eligibility
+        - generic [ref=f4e317]:
+          - generic [ref=f4e318]: "4"
+          - generic [ref=f4e319]: Quotes
+        - generic [ref=f4e322]:
+          - generic [ref=f4e323]: "5"
+          - generic [ref=f4e324]: Recommendation
+        - generic [ref=f4e327]:
+          - generic [ref=f4e328]: "6"
+          - generic [ref=f4e329]: Summary
+        - generic [ref=f4e332]:
+          - generic [ref=f4e333]: "7"
+          - generic [ref=f4e334]: Approved
+      - generic [ref=f4e336]:
+        - generic [ref=f4e337]:
+          - heading "Your Personalized Quotes" [level=1] [ref=f4e338]
+          - paragraph [ref=f4e339]: Choose the plan that works best for you
+        - generic [ref=f4e340]:
+          - button "Basic $18/mo $250K coverage $250,000 death benefit 10-year term No medical exam Instant approval Select Plan" [ref=f4e342] [cursor=pointer]:
+            - generic [ref=f4e343]:
+              - generic [ref=f4e344]: Basic
+              - generic [ref=f4e345]: $18/mo
+              - generic [ref=f4e346]: $250K coverage
+            - list [ref=f4e347]:
+              - listitem [ref=f4e348]: $250,000 death benefit
+              - listitem [ref=f4e351]: 10-year term
+              - listitem [ref=f4e354]: No medical exam
+              - listitem [ref=f4e357]: Instant approval
+            - generic [ref=f4e360]: Select Plan
+          - button "Most Popular Plus $29/mo $500K coverage $500,000 death benefit 20-year term No medical exam Instant approval Terminal illness rider Selected" [active] [ref=f4e414] [cursor=pointer]:
+            - generic [ref=f4e363]: Most Popular
+            - generic [ref=f4e366]:
+              - generic [ref=f4e367]: Plus
+              - generic [ref=f4e368]: $29/mo
+              - generic [ref=f4e369]: $500K coverage
+            - list [ref=f4e370]:
+              - listitem [ref=f4e371]: $500,000 death benefit
+              - listitem [ref=f4e374]: 20-year term
+              - listitem [ref=f4e377]: No medical exam
+              - listitem [ref=f4e380]: Instant approval
+              - listitem [ref=f4e383]: Terminal illness rider
+            - generic [ref=f4e386]: Selected
+          - button "Premium $47/mo $1.0M coverage $1,000,000 death benefit 30-year term No medical exam Instant approval Terminal illness rider Disability waiver Select Plan" [ref=f4e388] [cursor=pointer]:
+            - generic [ref=f4e389]:
+              - generic [ref=f4e390]: Premium
+              - generic [ref=f4e391]: $47/mo
+              - generic [ref=f4e392]: $1.0M coverage
+            - list [ref=f4e393]:
+              - listitem [ref=f4e394]: $1,000,000 death benefit
+              - listitem [ref=f4e397]: 30-year term
+              - listitem [ref=f4e400]: No medical exam
+              - listitem [ref=f4e403]: Instant approval
+              - listitem [ref=f4e406]: Terminal illness rider
+              - listitem [ref=f4e409]: Disability waiver
+            - generic [ref=f4e412]: Select Plan
+        - button "Continue with Plus" [ref=f4e415] [cursor=pointer]
+  - region "Notifications alt+T"
+  - alert [ref=f4e65]

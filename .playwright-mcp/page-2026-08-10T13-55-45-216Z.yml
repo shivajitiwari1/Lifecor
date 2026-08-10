@@ -1,0 +1,50 @@
+- generic [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - banner [ref=f4e3]:
+      - link "Lifecor" [ref=f4e4] [cursor=pointer]:
+        - /url: /
+    - main [ref=f4e9]:
+      - generic [ref=f4e12]:
+        - generic [ref=f4e14]:
+          - generic [ref=f4e15]: "1"
+          - generic [ref=f4e16]: Welcome
+        - generic [ref=f4e19]:
+          - generic [ref=f4e20]: "2"
+          - generic [ref=f4e21]: Lifestyle
+        - generic [ref=f4e24]:
+          - generic [ref=f4e25]: "3"
+          - generic [ref=f4e26]: Eligibility
+        - generic [ref=f4e29]:
+          - generic [ref=f4e30]: "4"
+          - generic [ref=f4e31]: Quotes
+        - generic [ref=f4e34]:
+          - generic [ref=f4e35]: "5"
+          - generic [ref=f4e36]: Recommendation
+        - generic [ref=f4e39]:
+          - generic [ref=f4e40]: "6"
+          - generic [ref=f4e41]: Summary
+        - generic [ref=f4e44]:
+          - generic [ref=f4e45]: "7"
+          - generic [ref=f4e46]: Approved
+      - generic [ref=f4e48]:
+        - generic [ref=f4e49]:
+          - heading "Welcome to Lifecor" [level=1] [ref=f4e50]
+          - paragraph [ref=f4e51]: Let's get you covered in minutes. Tell us a bit about yourself.
+        - generic [ref=f4e52]:
+          - generic [ref=f4e53]:
+            - generic [ref=f4e54]: Full Name
+            - textbox "Full Name" [ref=f4e55]:
+              - /placeholder: Jane Smith
+              - text: Jane Smith
+          - generic [ref=f4e56]:
+            - generic [ref=f4e57]: Age
+            - spinbutton "Age" [ref=f4e58]: "32"
+          - generic [ref=f4e59]:
+            - generic [ref=f4e60]: State
+            - combobox [active] [ref=f4e61] [cursor=pointer]:
+              - generic [ref=f4e62]: California
+              - img: ▼
+            - textbox [ref=f4e63]: California
+          - button "Continue" [ref=f4e64] [cursor=pointer]
+  - region "Notifications alt+T"
+  - alert [ref=f4e65]

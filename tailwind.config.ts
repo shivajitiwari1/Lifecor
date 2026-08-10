@@ -27,6 +27,6 @@ const config: Config = {
       fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }
 export default config

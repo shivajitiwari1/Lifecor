@@ -1,0 +1,164 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "Lifecor" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e11]:
+          - link "How It Works" [ref=e12] [cursor=pointer]:
+            - /url: "#how-it-works"
+          - link "Benefits" [ref=e13] [cursor=pointer]:
+            - /url: "#benefits"
+          - link "Partners" [ref=e14] [cursor=pointer]:
+            - /url: "#partners"
+        - generic [ref=e15]:
+          - button "Toggle theme" [ref=e16] [cursor=pointer]
+          - link "Start Demo" [ref=e18] [cursor=pointer]:
+            - /url: /demo
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: Now in Beta — Join 10,000+ covered individuals
+        - heading "Life Insurance Built For The Modern World" [level=1] [ref=e24]
+        - paragraph [ref=e25]: Get covered in minutes with a digital-first experience designed for consumers and distribution partners.
+        - generic [ref=e26]:
+          - link "Start Demo" [ref=e27] [cursor=pointer]:
+            - /url: /demo
+          - link "Partner Experience" [ref=e28] [cursor=pointer]:
+            - /url: /partner
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]: 3 min
+          - generic [ref=e32]: To get covered
+        - generic [ref=e33]:
+          - generic [ref=e34]: 98%
+          - generic [ref=e35]: Digital process
+        - generic [ref=e36]:
+          - generic [ref=e37]: $0
+          - generic [ref=e38]: Paperwork
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "Traditional life insurance is broken" [level=2] [ref=e45]
+        - paragraph [ref=e46]: People go uninsured because the process is too slow, too confusing, and too painful.
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - heading "Weeks of waiting" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Traditional life insurance takes 4–8 weeks. Medical exams, paperwork, phone calls — all required.
+        - generic [ref=e55]:
+          - heading "Mountains of paperwork" [level=3] [ref=e60]
+          - paragraph [ref=e61]: 30+ page applications. Fax machines. Physical signatures. Manual underwriting from the 1980s.
+        - generic [ref=e62]:
+          - heading "Confusing & opaque" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Hidden fees, complex policy language, and zero transparency into how decisions are made.
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - heading "Lifecor is different" [level=2] [ref=e72]
+        - paragraph [ref=e73]: We rebuilt the entire experience from the ground up.
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - generic [ref=e79]: 3 min
+          - heading "Fast" [level=3] [ref=e80]
+          - paragraph [ref=e81]: From application to approval in minutes, not weeks.
+        - generic [ref=e82]:
+          - generic [ref=e86]: 100%
+          - heading "Digital-First" [level=3] [ref=e87]
+          - paragraph [ref=e88]: Entirely online. No exams, no paperwork, no phone calls.
+        - generic [ref=e89]:
+          - generic [ref=e101]: 94%
+          - heading "AI-Powered" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Intelligent underwriting with a 94% average confidence score.
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - heading "How It Works" [level=2] [ref=e107]
+        - paragraph [ref=e108]: Four simple steps to complete coverage
+      - generic [ref=e109]:
+        - generic [ref=e111]:
+          - generic [ref=e116]: "01"
+          - heading "Tell us about yourself" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Share your age, state, and lifestyle details in under 2 minutes.
+        - generic [ref=e119]:
+          - generic [ref=e123]: "02"
+          - heading "AI analyzes your profile" [level=3] [ref=e124]
+          - paragraph [ref=e125]: Our AI assesses your risk and calculates eligibility instantly.
+        - generic [ref=e126]:
+          - generic [ref=e132]: "03"
+          - heading "Choose your plan" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Review personalized quote options and select coverage that fits.
+        - generic [ref=e135]:
+          - generic [ref=e140]: "04"
+          - heading "You're covered" [level=3] [ref=e141]
+          - paragraph [ref=e142]: Submit and receive approval confirmation in minutes.
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - heading "Why Choose Lifecor" [level=2] [ref=e146]
+        - paragraph [ref=e147]: Everything you need, nothing you don't.
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - heading "No Medical Exam" [level=3] [ref=e153]
+          - paragraph [ref=e154]: Coverage up to $1M — no exams required.
+        - generic [ref=e155]:
+          - heading "Instant Decisions" [level=3] [ref=e160]
+          - paragraph [ref=e161]: Approved or declined in minutes, not weeks.
+        - generic [ref=e162]:
+          - heading "Transparent Pricing" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Fixed premiums that never change. No hidden fees.
+        - generic [ref=e168]:
+          - heading "100% Digital" [level=3] [ref=e172]
+          - paragraph [ref=e173]: Manage your policy entirely online or via mobile.
+        - generic [ref=e174]:
+          - heading "A-Rated Coverage" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Backed by top-rated insurance carriers.
+        - generic [ref=e181]:
+          - heading "Bank-Level Security" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Your data is encrypted at every step.
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - generic [ref=e192]: For Distribution Partners
+        - heading "Close deals 3x faster" [level=2] [ref=e193]
+        - paragraph [ref=e194]: Give clients the modern insurance experience they expect. Our partner platform streamlines your workflow from lead to policy.
+        - generic [ref=e195]:
+          - generic [ref=e196]: 34% average conversion rate — industry leading
+          - generic [ref=e202]: Manage all your clients in one unified dashboard
+          - generic [ref=e210]: Real-time analytics on leads, conversions, and revenue
+        - link "Explore Partner Experience" [ref=e215] [cursor=pointer]:
+          - /url: /partner
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - generic [ref=e218]: Total Leads
+          - generic [ref=e219]:
+            - generic [ref=e220]: "247"
+            - generic [ref=e221]: +12% this month
+        - generic [ref=e222]:
+          - generic [ref=e223]: Conversion Rate
+          - generic [ref=e224]:
+            - generic [ref=e225]: 34.2%
+            - generic [ref=e226]: +4.1% this month
+        - generic [ref=e227]:
+          - generic [ref=e228]: Policies Issued
+          - generic [ref=e229]:
+            - generic [ref=e230]: "61"
+            - generic [ref=e231]: +8 this month
+        - generic [ref=e232]:
+          - generic [ref=e233]: Est. Commission
+          - generic [ref=e234]:
+            - generic [ref=e235]: $18,300
+            - generic [ref=e236]: +$2,100 this month
+    - generic [ref=e238]:
+      - generic [ref=e239]:
+        - heading "Ready to experience the future of life insurance?" [level=2] [ref=e243]
+        - paragraph [ref=e244]: See how Lifecor makes coverage fast, simple, and accessible.
+        - generic [ref=e245]:
+          - link "Start Demo" [ref=e246] [cursor=pointer]:
+            - /url: /demo
+          - link "Partner Experience" [ref=e247] [cursor=pointer]:
+            - /url: /partner
+      - generic [ref=e248]:
+        - generic [ref=e249]: © 2025 Lifecor. All rights reserved.
+        - generic [ref=e252]:
+          - link "Privacy" [ref=e253] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms" [ref=e254] [cursor=pointer]:
+            - /url: "#"
+          - link "Contact" [ref=e255] [cursor=pointer]:
+            - /url: "#"
+  - region "Notifications alt+T"
+  - alert [ref=e256]

@@ -1,0 +1,89 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - complementary [ref=f5e3]:
+      - link "Lifecor" [ref=f5e5] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f5e10]:
+        - link "Dashboard" [ref=f5e11] [cursor=pointer]:
+          - /url: /partner
+        - link "Lead Pipeline" [ref=f5e17] [cursor=pointer]:
+          - /url: /partner/pipeline
+        - link "Clients" [ref=f5e22] [cursor=pointer]:
+          - /url: /partner/clients
+        - link "Quote Generator" [ref=f5e28] [cursor=pointer]:
+          - /url: /partner/quote
+        - link "Analytics" [ref=f5e31] [cursor=pointer]:
+          - /url: /partner/analytics
+      - generic [ref=f5e35]:
+        - generic [ref=f5e36]: SM
+        - generic [ref=f5e38]:
+          - generic [ref=f5e39]: Sarah Mitchell
+          - generic [ref=f5e40]: Senior Advisor
+        - link [ref=f5e41] [cursor=pointer]:
+          - /url: /
+    - main [ref=f5e46]:
+      - generic [ref=f5e47]:
+        - generic [ref=f5e48]:
+          - heading "Dashboard" [level=1] [ref=f5e49]
+          - paragraph [ref=f5e50]: Welcome back, Sarah. Here's what's happening today.
+        - generic [ref=f5e51]:
+          - generic [ref=f5e52]:
+            - generic [ref=f5e53]: +12% this month
+            - generic [ref=f5e64]: "247"
+            - generic [ref=f5e65]: Total Leads
+          - generic [ref=f5e66]:
+            - generic [ref=f5e67]: +4.1% vs last month
+            - generic [ref=f5e76]: 34.2%
+            - generic [ref=f5e77]: Conversion Rate
+          - generic [ref=f5e78]:
+            - generic [ref=f5e79]: +7 this week
+            - generic [ref=f5e88]: "89"
+            - generic [ref=f5e89]: Applications
+          - generic [ref=f5e90]:
+            - generic [ref=f5e91]: +8 this month
+            - generic [ref=f5e99]: "61"
+            - generic [ref=f5e100]: Policies Issued
+        - generic [ref=f5e101]:
+          - generic [ref=f5e102]:
+            - heading "Policies Issued — Last 12 Months" [level=2] [ref=f5e103]
+            - img [ref=f5e106]:
+              - generic [ref=f5e111]:
+                - generic [ref=f5e112]: Aug
+                - generic [ref=f5e114]: Sep
+                - generic [ref=f5e116]: Oct
+                - generic [ref=f5e118]: Nov
+                - generic [ref=f5e120]: Dec
+                - generic [ref=f5e122]: Jan
+                - generic [ref=f5e124]: Feb
+                - generic [ref=f5e126]: Mar
+                - generic [ref=f5e128]: Apr
+                - generic [ref=f5e130]: May
+                - generic [ref=f5e132]: Jun
+                - generic [ref=f5e134]: Jul
+              - generic [ref=f5e137]:
+                - generic [ref=f5e138]: "0"
+                - generic [ref=f5e140]: "35"
+                - generic [ref=f5e142]: "70"
+                - generic [ref=f5e144]: "105"
+                - generic [ref=f5e146]: "140"
+          - generic [ref=f5e154]:
+            - heading "Recent Activity" [level=2] [ref=f5e155]
+            - generic [ref=f5e156]:
+              - generic [ref=f5e159]:
+                - paragraph [ref=f5e160]: James Carter policy approved
+                - paragraph [ref=f5e161]: 2 min ago
+              - generic [ref=f5e164]:
+                - paragraph [ref=f5e165]: "New lead: David Williams submitted"
+                - paragraph [ref=f5e166]: 18 min ago
+              - generic [ref=f5e169]:
+                - paragraph [ref=f5e170]: Quote generated for Lisa Johnson
+                - paragraph [ref=f5e171]: 1 hr ago
+              - generic [ref=f5e174]:
+                - paragraph [ref=f5e175]: "Application submitted: Brian Thomas"
+                - paragraph [ref=f5e176]: 2 hrs ago
+              - generic [ref=f5e179]:
+                - paragraph [ref=f5e180]: Christopher Wilson policy approved
+                - paragraph [ref=f5e181]: 3 hrs ago
+  - region "Notifications alt+T"
+  - alert [ref=f5e182]
+  - generic [ref=f5e183]: "0"

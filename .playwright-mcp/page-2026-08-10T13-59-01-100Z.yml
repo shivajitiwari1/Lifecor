@@ -1,0 +1,29 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - banner [ref=f4e3]:
+      - link "Lifecor" [ref=f4e4] [cursor=pointer]:
+        - /url: /
+    - main [ref=f4e9]:
+      - generic [ref=f4e418]:
+        - generic [ref=f4e419]: Welcome
+        - generic [ref=f4e426]: Lifestyle
+        - generic [ref=f4e433]: Eligibility
+        - generic [ref=f4e440]: Quotes
+        - generic [ref=f4e448]:
+          - generic [ref=f4e449]: "5"
+          - generic [ref=f4e450]: Recommendation
+        - generic [ref=f4e453]:
+          - generic [ref=f4e454]: "6"
+          - generic [ref=f4e455]: Summary
+        - generic [ref=f4e458]:
+          - generic [ref=f4e459]: "7"
+          - generic [ref=f4e460]: Approved
+      - generic [ref=f4e462]:
+        - generic [ref=f4e463]:
+          - heading "AI Recommendation" [level=1] [ref=f4e464]
+          - paragraph [ref=f4e465]: Based on your profile, here's what we recommend
+        - generic [ref=f4e471]:
+          - generic [ref=f4e472]: Lifecor AI
+          - paragraph [ref=f4e476]: Based on your profile, Plus Protection provides the best balance of affordability and coverage to protect your 1 dependent. With a ultra preferred risk classification, you qualify for our most competitive rates.
+  - region "Notifications alt+T"
+  - alert [ref=f4e65]

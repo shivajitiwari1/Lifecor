@@ -1,0 +1,69 @@
+- generic [active] [ref=f9e1]:
+  - generic [ref=f9e2]:
+    - complementary [ref=f9e3]:
+      - generic [ref=f9e4]:
+        - link "Lifecor" [ref=f9e5] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f9e10]: Admin
+      - navigation [ref=f9e11]:
+        - link "Dashboard" [ref=f9e12] [cursor=pointer]:
+          - /url: /admin
+        - link "Policy Management" [ref=f9e18] [cursor=pointer]:
+          - /url: /admin/policies
+        - link "User Management" [ref=f9e22] [cursor=pointer]:
+          - /url: /admin/users
+        - link "Reports" [ref=f9e28] [cursor=pointer]:
+          - /url: /admin/reports
+      - generic [ref=f9e31]:
+        - link "Settings" [ref=f9e32] [cursor=pointer]:
+          - /url: "#"
+        - link "Back to Site" [ref=f9e36] [cursor=pointer]:
+          - /url: /
+    - main [ref=f9e41]:
+      - generic [ref=f9e42]:
+        - generic [ref=f9e43]:
+          - heading "Admin Dashboard" [level=1] [ref=f9e44]
+          - paragraph [ref=f9e45]: System-wide overview — all carriers, all agents
+        - generic [ref=f9e46]:
+          - generic [ref=f9e47]:
+            - generic [ref=f9e48]: +11% this quarter
+            - generic [ref=f9e57]: "14"
+            - generic [ref=f9e58]: Total Policies
+          - generic [ref=f9e59]:
+            - generic [ref=f9e60]: +18% YoY
+            - generic [ref=f9e68]: $5K
+            - generic [ref=f9e69]: Annual Premium
+          - generic [ref=f9e70]:
+            - generic [ref=f9e71]: +2 this month
+            - generic [ref=f9e82]: "8"
+            - generic [ref=f9e83]: Active Agents
+          - generic [ref=f9e84]:
+            - generic [ref=f9e85]: 4 awaiting review
+            - generic [ref=f9e94]: "4"
+            - generic [ref=f9e95]: Pending Applications
+        - generic [ref=f9e96]:
+          - heading "System-Wide Policy Volume" [level=2] [ref=f9e97]
+          - paragraph [ref=f9e98]: Total policies issued across all agents — last 12 months
+          - img [ref=f9e101]:
+            - generic [ref=f9e106]:
+              - generic [ref=f9e107]: Aug
+              - generic [ref=f9e109]: Sep
+              - generic [ref=f9e111]: Oct
+              - generic [ref=f9e113]: Nov
+              - generic [ref=f9e115]: Dec
+              - generic [ref=f9e117]: Jan
+              - generic [ref=f9e119]: Feb
+              - generic [ref=f9e121]: Mar
+              - generic [ref=f9e123]: Apr
+              - generic [ref=f9e125]: May
+              - generic [ref=f9e127]: Jun
+              - generic [ref=f9e129]: Jul
+            - generic [ref=f9e132]:
+              - generic [ref=f9e133]: "0"
+              - generic [ref=f9e135]: "35"
+              - generic [ref=f9e137]: "70"
+              - generic [ref=f9e139]: "105"
+              - generic [ref=f9e141]: "140"
+  - region "Notifications alt+T"
+  - alert [ref=f9e145]
+  - generic [ref=f9e146]: "0"

@@ -1,0 +1,94 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - complementary [ref=f8e3]:
+      - link "Lifecor" [ref=f8e5] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f8e10]:
+        - link "Dashboard" [ref=f8e11] [cursor=pointer]:
+          - /url: /partner
+        - link "Lead Pipeline" [ref=f8e17] [cursor=pointer]:
+          - /url: /partner/pipeline
+        - link "Clients" [ref=f8e22] [cursor=pointer]:
+          - /url: /partner/clients
+        - link "Quote Generator" [ref=f8e28] [cursor=pointer]:
+          - /url: /partner/quote
+        - link "Analytics" [ref=f8e31] [cursor=pointer]:
+          - /url: /partner/analytics
+      - generic [ref=f8e35]:
+        - generic [ref=f8e36]: SM
+        - generic [ref=f8e38]:
+          - generic [ref=f8e39]: Sarah Mitchell
+          - generic [ref=f8e40]: Senior Advisor
+        - link [ref=f8e41] [cursor=pointer]:
+          - /url: /
+    - main [ref=f8e46]:
+      - generic [ref=f8e47]:
+        - generic [ref=f8e48]:
+          - generic [ref=f8e49]:
+            - heading "Analytics" [level=1] [ref=f8e50]
+            - paragraph [ref=f8e51]: Performance insights for your book of business
+          - generic [ref=f8e52]:
+            - button "3M" [ref=f8e53] [cursor=pointer]
+            - button "6M" [ref=f8e54] [cursor=pointer]
+            - button "1Y" [ref=f8e55] [cursor=pointer]
+        - generic [ref=f8e56]:
+          - generic [ref=f8e57]:
+            - heading "Monthly Policies Issued" [level=2] [ref=f8e58]
+            - paragraph [ref=f8e59]: Total policies closed per month
+            - img [ref=f8e62]:
+              - generic [ref=f8e67]:
+                - generic [ref=f8e68]: Aug
+                - generic [ref=f8e70]: Sep
+                - generic [ref=f8e72]: Oct
+                - generic [ref=f8e74]: Nov
+                - generic [ref=f8e76]: Dec
+                - generic [ref=f8e78]: Jan
+                - generic [ref=f8e80]: Feb
+                - generic [ref=f8e82]: Mar
+                - generic [ref=f8e84]: Apr
+                - generic [ref=f8e86]: May
+                - generic [ref=f8e88]: Jun
+                - generic [ref=f8e90]: Jul
+              - generic [ref=f8e93]:
+                - generic [ref=f8e94]: "0"
+                - generic [ref=f8e96]: "35"
+                - generic [ref=f8e98]: "70"
+                - generic [ref=f8e100]: "105"
+                - generic [ref=f8e102]: "140"
+          - generic [ref=f8e104]:
+            - generic [ref=f8e105]:
+              - heading "Conversion Trend" [level=2] [ref=f8e106]
+              - paragraph [ref=f8e107]: Monthly conversion rate (%)
+              - img [ref=f8e110]:
+                - generic [ref=f8e115]:
+                  - generic [ref=f8e116]: Feb
+                  - generic [ref=f8e118]: Mar
+                  - generic [ref=f8e120]: Apr
+                  - generic [ref=f8e122]: May
+                  - generic [ref=f8e124]: Jun
+                  - generic [ref=f8e126]: Jul
+                - generic [ref=f8e129]:
+                  - generic [ref=f8e130]: "20"
+                  - generic [ref=f8e132]: "28"
+                  - generic [ref=f8e134]: "36"
+                  - generic [ref=f8e136]: "50"
+            - generic [ref=f8e140]:
+              - heading "Revenue Estimate" [level=2] [ref=f8e141]
+              - paragraph [ref=f8e142]: Estimated monthly commission ($)
+              - img [ref=f8e145]:
+                - generic [ref=f8e150]:
+                  - generic [ref=f8e151]: Feb
+                  - generic [ref=f8e153]: Mar
+                  - generic [ref=f8e155]: Apr
+                  - generic [ref=f8e157]: May
+                  - generic [ref=f8e159]: Jun
+                  - generic [ref=f8e161]: Jul
+                - generic [ref=f8e164]:
+                  - generic [ref=f8e165]: $0K
+                  - generic [ref=f8e167]: $20K
+                  - generic [ref=f8e169]: $40K
+                  - generic [ref=f8e171]: $60K
+                  - generic [ref=f8e173]: $80K
+  - region "Notifications alt+T"
+  - alert [ref=f8e181]
+  - generic [ref=f8e182]: $0K
