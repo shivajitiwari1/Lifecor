@@ -49,7 +49,11 @@ export function LandingNavbar() {
               <Link
                 key={href}
                 href={href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-sm transition-colors ${
+                  scrolled
+                    ? 'text-muted-foreground hover:text-foreground'
+                    : 'text-white/70 hover:text-white'
+                }`}
               >
                 {label}
               </Link>
@@ -58,7 +62,7 @@ export function LandingNavbar() {
 
           {/* Right side actions */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
+            <ThemeToggle className={scrolled ? '' : 'text-white hover:bg-white/10 hover:text-white'} />
             <Link
               href="/demo"
               className={cn(
