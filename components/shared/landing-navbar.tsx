@@ -40,7 +40,7 @@ export function LandingNavbar() {
             <div className="w-8 h-8 rounded-lg bg-electric-600 flex items-center justify-center">
               <Shield className="w-4 h-4 text-white" />
             </div>
-            <span className="text-xl font-bold">Lifecor</span>
+            <span className={`text-xl font-bold ${scrolled ? 'text-foreground' : 'text-white'}`}>Lifecor</span>
           </Link>
 
           {/* Nav links — hidden on mobile */}
