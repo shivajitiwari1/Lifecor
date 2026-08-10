@@ -13,8 +13,8 @@ export function SolutionSection() {
     <section className="py-24 bg-navy-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Lifecor is <span className="text-gradient">different</span></h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">We rebuilt the entire experience from the ground up.</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Lifecor is <span className="text-gradient">different</span></h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">We rebuilt the entire experience from the ground up.</p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((item, i) => (
@@ -24,8 +24,8 @@ export function SolutionSection() {
                 <item.icon className="w-7 h-7 text-electric-400" />
               </div>
               <div className="text-5xl font-extrabold text-gradient mb-2">{item.value}</div>
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-muted-foreground">{item.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+              <p className="text-white/60">{item.description}</p>
             </motion.div>
           ))}
         </div>

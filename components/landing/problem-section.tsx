@@ -19,7 +19,7 @@ export function ProblemSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {problems.map((p, i) => (
             <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="glass-card rounded-2xl p-8 group hover:border-red-400/30 transition-all duration-300">
+              className="theme-card rounded-2xl p-8 group hover:border-red-400/40 transition-all duration-300">
               <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition-colors">
                 <p.icon className="w-6 h-6 text-red-400" />
               </div>

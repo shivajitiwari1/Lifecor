@@ -53,7 +53,8 @@
 }
 @layer utilities {
   .text-gradient { @apply bg-gradient-to-r from-electric-400 to-electric-600 bg-clip-text text-transparent; }
-  .glass-card { @apply bg-white/5 backdrop-blur-sm border border-white/10; }
+  .glass-card { @apply bg-white/10 backdrop-blur-sm border border-white/20; }
+  .theme-card { @apply bg-card border border-border backdrop-blur-sm; }
   .navy-gradient { background: linear-gradient(135deg, #050A14 0%, #0A0F1E 50%, #0F1729 100%); }
   .blue-glow { box-shadow: 0 0 30px rgba(59,130,246,0.3); }
 }

@@ -13,8 +13,8 @@ export function CTASection() {
           <div className="w-16 h-16 rounded-2xl bg-electric-600/20 border border-electric-600/40 flex items-center justify-center mx-auto mb-8">
             <Shield className="w-8 h-8 text-electric-400" />
           </div>
-          <h2 className="text-4xl font-bold mb-4">Ready to experience the future of life insurance?</h2>
-          <p className="text-muted-foreground text-lg mb-10">See how Lifecor makes coverage fast, simple, and accessible.</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Ready to experience the future of life insurance?</h2>
+          <p className="text-white/60 text-lg mb-10">See how Lifecor makes coverage fast, simple, and accessible.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/demo"
@@ -29,7 +29,7 @@ export function CTASection() {
               href="/partner"
               className={cn(
                 buttonVariants({ variant: 'outline', size: 'lg' }),
-                'border-white/20 text-white px-8 h-12'
+                'border-white/50 hover:border-white/80 text-white px-8 h-12'
               )}
             >
               Partner Experience
@@ -37,9 +37,9 @@ export function CTASection() {
           </div>
         </motion.div>
         <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-electric-400" />© 2025 Lifecor. All rights reserved.</span>
+          <span className="flex items-center gap-2 text-white/50"><Shield className="w-4 h-4 text-electric-400" />© 2025 Lifecor. All rights reserved.</span>
           <div className="flex gap-6">
-            {['Privacy', 'Terms', 'Contact'].map(l => <Link key={l} href="#" className="hover:text-foreground transition-colors">{l}</Link>)}
+            {['Privacy', 'Terms', 'Contact'].map(l => <Link key={l} href="#" className="text-white/50 hover:text-white transition-colors">{l}</Link>)}
           </div>
         </div>
       </div>

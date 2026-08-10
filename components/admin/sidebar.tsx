@@ -33,7 +33,7 @@ export function AdminSidebar() {
               className={cn(
                 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200',
                 active
-                  ? 'bg-slate-500/20 text-slate-300 border border-slate-500/30'
+                  ? 'bg-primary/10 text-primary border border-primary/20'
                   : 'text-muted-foreground hover:bg-muted hover:text-foreground',
               )}
             >

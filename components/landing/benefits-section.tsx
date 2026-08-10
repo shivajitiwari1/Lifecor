@@ -16,8 +16,8 @@ export function BenefitsSection() {
     <section id="benefits" className="py-24 bg-navy-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Why Choose Lifecor</h2>
-          <p className="text-muted-foreground text-lg">Everything you need, nothing you don&apos;t.</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Why Choose Lifecor</h2>
+          <p className="text-white/60 text-lg">Everything you need, nothing you don&apos;t.</p>
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b, i) => (
@@ -26,8 +26,8 @@ export function BenefitsSection() {
               <div className="w-10 h-10 rounded-lg bg-electric-600/20 flex items-center justify-center mb-4 group-hover:bg-electric-600/30 transition-colors">
                 <b.icon className="w-5 h-5 text-electric-400" />
               </div>
-              <h3 className="text-base font-semibold mb-2">{b.title}</h3>
-              <p className="text-sm text-muted-foreground">{b.description}</p>
+              <h3 className="text-base font-semibold text-white mb-2">{b.title}</h3>
+              <p className="text-sm text-white/60">{b.description}</p>
             </motion.div>
           ))}
         </div>
