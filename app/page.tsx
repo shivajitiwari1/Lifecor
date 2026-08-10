@@ -1,15 +1,23 @@
-export default function Home() {
+import { LandingNavbar } from '@/components/shared/landing-navbar'
+import { Hero } from '@/components/landing/hero'
+import { ProblemSection } from '@/components/landing/problem-section'
+import { SolutionSection } from '@/components/landing/solution-section'
+import { HowItWorksSection } from '@/components/landing/how-it-works-section'
+import { BenefitsSection } from '@/components/landing/benefits-section'
+import { PartnerBenefitsSection } from '@/components/landing/partner-benefits-section'
+import { CTASection } from '@/components/landing/cta-section'
+
+export default function LandingPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-navy-950 to-navy-900 p-24">
-      <div className="text-center">
-        <h1 className="mb-4 text-5xl font-bold text-white">Lifecor</h1>
-        <p className="mb-8 text-xl text-gray-400">
-          Life Insurance Management Platform
-        </p>
-        <p className="text-lg text-gray-500">
-          Next.js 15 App Router + Tailwind CSS initialized successfully
-        </p>
-      </div>
+    <main>
+      <LandingNavbar />
+      <Hero />
+      <ProblemSection />
+      <SolutionSection />
+      <HowItWorksSection />
+      <BenefitsSection />
+      <PartnerBenefitsSection />
+      <CTASection />
     </main>
-  );
+  )
 }
