@@ -38,18 +38,18 @@ export function PartnerBenefitsSection() {
               Explore Partner Experience
             </Link>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="theme-card rounded-2xl p-8 space-y-4">
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="rounded-2xl p-8 space-y-3 bg-muted border border-border shadow-sm">
             {[
               { label: 'Total Leads', value: '247', change: '+12%' },
               { label: 'Conversion Rate', value: '34.2%', change: '+4.1%' },
               { label: 'Policies Issued', value: '61', change: '+8' },
               { label: 'Est. Commission', value: '$18,300', change: '+$2,100' },
             ].map(m => (
-              <div key={m.label} className="flex items-center justify-between p-4 rounded-xl bg-muted/60">
-                <span className="text-muted-foreground text-sm">{m.label}</span>
+              <div key={m.label} className="flex items-center justify-between p-4 rounded-xl bg-background border border-border">
+                <span className="text-foreground/70 text-sm font-medium">{m.label}</span>
                 <div className="text-right">
-                  <div className="font-semibold">{m.value}</div>
-                  <div className="text-green-400 text-xs">{m.change} this month</div>
+                  <div className="font-bold text-foreground">{m.value}</div>
+                  <div className="text-green-500 dark:text-green-400 text-xs font-medium">{m.change} this month</div>
                 </div>
               </div>
             ))}
