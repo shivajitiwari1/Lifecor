@@ -1,0 +1,22 @@
+[
+  {"id":"p001","customerId":"c001","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"active","issuedDate":"2024-02-01","expiryDate":"2044-02-01","plan":"plus"},
+  {"id":"p002","customerId":"c002","type":"term-30","coverageAmount":1000000,"monthlyPremium":47,"status":"active","issuedDate":"2024-02-20","expiryDate":"2054-02-20","plan":"premium"},
+  {"id":"p003","customerId":"c003","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"pending","issuedDate":null,"expiryDate":null,"plan":"basic"},
+  {"id":"p004","customerId":"c004","type":"term-20","coverageAmount":1000000,"monthlyPremium":47,"status":"active","issuedDate":"2024-03-20","expiryDate":"2044-03-20","plan":"premium"},
+  {"id":"p005","customerId":"c005","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"active","issuedDate":"2024-04-08","expiryDate":"2044-04-08","plan":"plus"},
+  {"id":"p006","customerId":"c006","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"lapsed","issuedDate":"2024-04-25","expiryDate":"2034-04-25","plan":"basic"},
+  {"id":"p007","customerId":"c007","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"pending","issuedDate":null,"expiryDate":null,"plan":"plus"},
+  {"id":"p008","customerId":"c008","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"active","issuedDate":"2024-05-30","expiryDate":"2034-05-30","plan":"basic"},
+  {"id":"p009","customerId":"c009","type":"term-30","coverageAmount":1000000,"monthlyPremium":47,"status":"active","issuedDate":"2024-06-18","expiryDate":"2054-06-18","plan":"premium"},
+  {"id":"p010","customerId":"c010","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"active","issuedDate":"2024-07-05","expiryDate":"2044-07-05","plan":"plus"},
+  {"id":"p011","customerId":"c011","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"active","issuedDate":"2024-07-22","expiryDate":"2044-07-22","plan":"plus"},
+  {"id":"p012","customerId":"c012","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"active","issuedDate":"2024-08-08","expiryDate":"2034-08-08","plan":"basic"},
+  {"id":"p013","customerId":"c013","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"pending","issuedDate":null,"expiryDate":null,"plan":"plus"},
+  {"id":"p014","customerId":"c014","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"active","issuedDate":"2024-09-12","expiryDate":"2044-09-12","plan":"plus"},
+  {"id":"p015","customerId":"c015","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"lapsed","issuedDate":"2024-09-30","expiryDate":"2034-09-30","plan":"basic"},
+  {"id":"p016","customerId":"c016","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"active","issuedDate":"2024-10-17","expiryDate":"2034-10-17","plan":"basic"},
+  {"id":"p017","customerId":"c017","type":"term-30","coverageAmount":1000000,"monthlyPremium":47,"status":"active","issuedDate":"2024-11-03","expiryDate":"2054-11-03","plan":"premium"},
+  {"id":"p018","customerId":"c018","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"active","issuedDate":"2024-11-20","expiryDate":"2034-11-20","plan":"basic"},
+  {"id":"p019","customerId":"c019","type":"term-20","coverageAmount":500000,"monthlyPremium":29,"status":"pending","issuedDate":null,"expiryDate":null,"plan":"plus"},
+  {"id":"p020","customerId":"c020","type":"term-10","coverageAmount":250000,"monthlyPremium":18,"status":"active","issuedDate":"2024-12-22","expiryDate":"2034-12-22","plan":"basic"}
+]

@@ -1,0 +1,9 @@
+[
+  {"id":"app001","customerId":"c001","agentId":"a001","plan":"plus","coverageAmount":500000,"monthlyPremium":29,"status":"approved","submittedDate":"2024-01-28","decidedDate":"2024-02-01"},
+  {"id":"app002","customerId":"c002","agentId":"a002","plan":"premium","coverageAmount":1000000,"monthlyPremium":47,"status":"approved","submittedDate":"2024-02-15","decidedDate":"2024-02-20"},
+  {"id":"app003","customerId":"c003","agentId":null,"plan":"basic","coverageAmount":250000,"monthlyPremium":18,"status":"under-review","submittedDate":"2025-01-20","decidedDate":null},
+  {"id":"app004","customerId":"c004","agentId":"a003","plan":"premium","coverageAmount":1000000,"monthlyPremium":47,"status":"approved","submittedDate":"2024-03-15","decidedDate":"2024-03-20"},
+  {"id":"app005","customerId":"c007","agentId":"a001","plan":"plus","coverageAmount":500000,"monthlyPremium":29,"status":"under-review","submittedDate":"2025-01-22","decidedDate":null},
+  {"id":"app006","customerId":"c013","agentId":"a002","plan":"plus","coverageAmount":500000,"monthlyPremium":29,"status":"under-review","submittedDate":"2025-01-23","decidedDate":null},
+  {"id":"app007","customerId":"c019","agentId":"a001","plan":"plus","coverageAmount":500000,"monthlyPremium":29,"status":"submitted","submittedDate":"2025-01-25","decidedDate":null}
+]

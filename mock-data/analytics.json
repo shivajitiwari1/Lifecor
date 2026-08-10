@@ -1,0 +1,20 @@
+{
+  "monthlyPolicies": [
+    {"month":"Aug","policies":45},{"month":"Sep","policies":52},{"month":"Oct","policies":61},
+    {"month":"Nov","policies":58},{"month":"Dec","policies":71},{"month":"Jan","policies":89},
+    {"month":"Feb","policies":94},{"month":"Mar","policies":103},{"month":"Apr","policies":98},
+    {"month":"May","policies":112},{"month":"Jun","policies":127},{"month":"Jul","policies":134}
+  ],
+  "conversionTrend": [
+    {"month":"Feb","rate":28.4},{"month":"Mar","rate":30.1},{"month":"Apr","rate":31.8},
+    {"month":"May","rate":33.2},{"month":"Jun","rate":34.9},{"month":"Jul","rate":34.2}
+  ],
+  "revenueEstimate": [
+    {"month":"Feb","revenue":52200},{"month":"Mar","revenue":60276},{"month":"Apr","revenue":57204},
+    {"month":"May","revenue":65352},{"month":"Jun","revenue":74079},{"month":"Jul","revenue":78138}
+  ],
+  "conversionByState": [
+    {"state":"CA","rate":38.5},{"state":"TX","rate":34.2},{"state":"FL","rate":29.8},
+    {"state":"NY","rate":41.3},{"state":"IL","rate":31.7}
+  ]
+}

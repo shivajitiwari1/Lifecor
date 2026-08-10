@@ -1,0 +1,17 @@
+[
+  {"id":"l001","clientName":"James Carter","coverageAmount":500000,"lastContactDate":"2025-01-10","status":"approved","agentId":"a001","state":"California","age":34},
+  {"id":"l002","clientName":"Sarah Mitchell","coverageAmount":1000000,"lastContactDate":"2025-01-15","status":"approved","agentId":"a001","state":"Texas","age":42},
+  {"id":"l003","clientName":"Michael Torres","coverageAmount":250000,"lastContactDate":"2025-01-18","status":"in-review","agentId":"a001","state":"Florida","age":28},
+  {"id":"l004","clientName":"Emily Chen","coverageAmount":1000000,"lastContactDate":"2025-01-20","status":"contacted","agentId":"a001","state":"New York","age":31},
+  {"id":"l005","clientName":"David Williams","coverageAmount":500000,"lastContactDate":"2025-01-22","status":"new","agentId":"a001","state":"Illinois","age":55},
+  {"id":"l006","clientName":"Lisa Johnson","coverageAmount":250000,"lastContactDate":"2025-01-23","status":"new","agentId":"a001","state":"Arizona","age":39},
+  {"id":"l007","clientName":"Robert Brown","coverageAmount":500000,"lastContactDate":"2025-01-19","status":"in-review","agentId":"a001","state":"Washington","age":47},
+  {"id":"l008","clientName":"Jennifer Davis","coverageAmount":250000,"lastContactDate":"2025-01-21","status":"contacted","agentId":"a001","state":"Colorado","age":26},
+  {"id":"l009","clientName":"Christopher Wilson","coverageAmount":1000000,"lastContactDate":"2025-01-14","status":"approved","agentId":"a001","state":"Georgia","age":51},
+  {"id":"l010","clientName":"Amanda Martinez","coverageAmount":500000,"lastContactDate":"2025-01-24","status":"new","agentId":"a001","state":"Nevada","age":33},
+  {"id":"l011","clientName":"Kevin Anderson","coverageAmount":500000,"lastContactDate":"2025-01-17","status":"contacted","agentId":"a001","state":"Michigan","age":44},
+  {"id":"l012","clientName":"Michelle Taylor","coverageAmount":250000,"lastContactDate":"2025-01-25","status":"new","agentId":"a001","state":"Oregon","age":29},
+  {"id":"l013","clientName":"Brian Thomas","coverageAmount":500000,"lastContactDate":"2025-01-16","status":"in-review","agentId":"a001","state":"Virginia","age":38},
+  {"id":"l014","clientName":"Stephanie Jackson","coverageAmount":500000,"lastContactDate":"2025-01-13","status":"approved","agentId":"a001","state":"Minnesota","age":35},
+  {"id":"l015","clientName":"Andrew White","coverageAmount":250000,"lastContactDate":"2025-01-26","status":"new","agentId":"a001","state":"Ohio","age":62}
+]

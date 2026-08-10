@@ -1,0 +1,12 @@
+[
+  {"id":"a001","name":"Sarah Mitchell","email":"sarah@lifecor.com","role":"agent","avatar":"SM","totalLeads":89,"conversionRate":38.2,"policiesIssued":34,"joinedDate":"2023-03-15"},
+  {"id":"a002","name":"Marcus Johnson","email":"marcus@lifecor.com","role":"agent","avatar":"MJ","totalLeads":112,"conversionRate":29.5,"policiesIssued":33,"joinedDate":"2023-01-10"},
+  {"id":"a003","name":"Priya Patel","email":"priya@lifecor.com","role":"admin","avatar":"PP","totalLeads":145,"conversionRate":42.1,"policiesIssued":61,"joinedDate":"2022-11-20"},
+  {"id":"a004","name":"Carlos Rivera","email":"carlos@lifecor.com","role":"agent","avatar":"CR","totalLeads":67,"conversionRate":31.3,"policiesIssued":21,"joinedDate":"2023-06-01"},
+  {"id":"a005","name":"Emily Zhang","email":"emily@lifecor.com","role":"viewer","avatar":"EZ","totalLeads":23,"conversionRate":21.7,"policiesIssued":5,"joinedDate":"2024-01-15"},
+  {"id":"a006","name":"David Kim","email":"david@lifecor.com","role":"agent","avatar":"DK","totalLeads":78,"conversionRate":35.9,"policiesIssued":28,"joinedDate":"2023-04-22"},
+  {"id":"a007","name":"Amanda Foster","email":"amanda@lifecor.com","role":"agent","avatar":"AF","totalLeads":56,"conversionRate":26.8,"policiesIssued":15,"joinedDate":"2023-08-10"},
+  {"id":"a008","name":"James O'Brien","email":"james@lifecor.com","role":"agent","avatar":"JO","totalLeads":94,"conversionRate":33.0,"policiesIssued":31,"joinedDate":"2023-02-28"},
+  {"id":"a009","name":"Natasha Williams","email":"natasha@lifecor.com","role":"admin","avatar":"NW","totalLeads":203,"conversionRate":44.3,"policiesIssued":90,"joinedDate":"2022-09-05"},
+  {"id":"a010","name":"Tom Hartley","email":"tom@lifecor.com","role":"viewer","avatar":"TH","totalLeads":12,"conversionRate":16.7,"policiesIssued":2,"joinedDate":"2024-04-01"}
+]

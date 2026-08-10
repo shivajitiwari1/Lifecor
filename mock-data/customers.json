@@ -1,0 +1,22 @@
+[
+  {"id":"c001","name":"James Carter","age":34,"state":"California","annualIncome":95000,"smoker":false,"existingConditions":"none","dependents":2,"email":"james.carter@email.com","phone":"555-0101","createdAt":"2024-01-15"},
+  {"id":"c002","name":"Sarah Mitchell","age":42,"state":"Texas","annualIncome":120000,"smoker":false,"existingConditions":"minor","dependents":3,"email":"sarah.mitchell@email.com","phone":"555-0102","createdAt":"2024-02-03"},
+  {"id":"c003","name":"Michael Torres","age":28,"state":"Florida","annualIncome":65000,"smoker":true,"existingConditions":"none","dependents":0,"email":"michael.torres@email.com","phone":"555-0103","createdAt":"2024-02-18"},
+  {"id":"c004","name":"Emily Chen","age":31,"state":"New York","annualIncome":145000,"smoker":false,"existingConditions":"none","dependents":1,"email":"emily.chen@email.com","phone":"555-0104","createdAt":"2024-03-05"},
+  {"id":"c005","name":"David Williams","age":55,"state":"Illinois","annualIncome":82000,"smoker":false,"existingConditions":"minor","dependents":2,"email":"david.williams@email.com","phone":"555-0105","createdAt":"2024-03-22"},
+  {"id":"c006","name":"Lisa Johnson","age":39,"state":"Arizona","annualIncome":73000,"smoker":false,"existingConditions":"none","dependents":2,"email":"lisa.johnson@email.com","phone":"555-0106","createdAt":"2024-04-10"},
+  {"id":"c007","name":"Robert Brown","age":47,"state":"Washington","annualIncome":108000,"smoker":true,"existingConditions":"major","dependents":1,"email":"robert.brown@email.com","phone":"555-0107","createdAt":"2024-04-28"},
+  {"id":"c008","name":"Jennifer Davis","age":26,"state":"Colorado","annualIncome":58000,"smoker":false,"existingConditions":"none","dependents":0,"email":"jennifer.davis@email.com","phone":"555-0108","createdAt":"2024-05-14"},
+  {"id":"c009","name":"Christopher Wilson","age":51,"state":"Georgia","annualIncome":134000,"smoker":false,"existingConditions":"minor","dependents":3,"email":"chris.wilson@email.com","phone":"555-0109","createdAt":"2024-06-01"},
+  {"id":"c010","name":"Amanda Martinez","age":33,"state":"Nevada","annualIncome":79000,"smoker":false,"existingConditions":"none","dependents":1,"email":"amanda.martinez@email.com","phone":"555-0110","createdAt":"2024-06-18"},
+  {"id":"c011","name":"Kevin Anderson","age":44,"state":"Michigan","annualIncome":91000,"smoker":false,"existingConditions":"none","dependents":2,"email":"kevin.anderson@email.com","phone":"555-0111","createdAt":"2024-07-05"},
+  {"id":"c012","name":"Michelle Taylor","age":29,"state":"Oregon","annualIncome":67000,"smoker":false,"existingConditions":"none","dependents":0,"email":"michelle.taylor@email.com","phone":"555-0112","createdAt":"2024-07-22"},
+  {"id":"c013","name":"Brian Thomas","age":38,"state":"Virginia","annualIncome":115000,"smoker":true,"existingConditions":"minor","dependents":2,"email":"brian.thomas@email.com","phone":"555-0113","createdAt":"2024-08-08"},
+  {"id":"c014","name":"Stephanie Jackson","age":35,"state":"Minnesota","annualIncome":88000,"smoker":false,"existingConditions":"none","dependents":1,"email":"steph.jackson@email.com","phone":"555-0114","createdAt":"2024-08-25"},
+  {"id":"c015","name":"Andrew White","age":62,"state":"Ohio","annualIncome":76000,"smoker":false,"existingConditions":"major","dependents":0,"email":"andrew.white@email.com","phone":"555-0115","createdAt":"2024-09-12"},
+  {"id":"c016","name":"Rachel Harris","age":27,"state":"Utah","annualIncome":54000,"smoker":false,"existingConditions":"none","dependents":0,"email":"rachel.harris@email.com","phone":"555-0116","createdAt":"2024-09-30"},
+  {"id":"c017","name":"Daniel Clark","age":46,"state":"Pennsylvania","annualIncome":127000,"smoker":false,"existingConditions":"none","dependents":3,"email":"daniel.clark@email.com","phone":"555-0117","createdAt":"2024-10-15"},
+  {"id":"c018","name":"Jessica Lewis","age":32,"state":"North Carolina","annualIncome":69000,"smoker":false,"existingConditions":"none","dependents":1,"email":"jessica.lewis@email.com","phone":"555-0118","createdAt":"2024-11-01"},
+  {"id":"c019","name":"Matthew Robinson","age":40,"state":"Tennessee","annualIncome":98000,"smoker":true,"existingConditions":"minor","dependents":2,"email":"matt.robinson@email.com","phone":"555-0119","createdAt":"2024-11-18"},
+  {"id":"c020","name":"Ashley Walker","age":24,"state":"Missouri","annualIncome":48000,"smoker":false,"existingConditions":"none","dependents":0,"email":"ashley.walker@email.com","phone":"555-0120","createdAt":"2024-12-05"}
+]
