@@ -42,7 +42,7 @@ export default function RecommendationPage() {
         <div className="w-full max-w-xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="text-center mb-8">
             <h1 className="text-3xl font-bold mb-2">AI Recommendation</h1>
-            <p className="text-muted-foreground">Based on your profile, here's what we recommend</p>
+            <p className="text-muted-foreground">Based on your profile, here&apos;s what we recommend</p>
           </motion.div>
 
           {showMessage && (

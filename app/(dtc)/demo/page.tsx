@@ -45,7 +45,7 @@ export default function WelcomePage() {
         >
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold mb-2">Welcome to Lifecor</h1>
-            <p className="text-muted-foreground">Let's get you covered in minutes. Tell us a bit about yourself.</p>
+            <p className="text-muted-foreground">Let&apos;s get you covered in minutes. Tell us a bit about yourself.</p>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <div>
@@ -60,7 +60,7 @@ export default function WelcomePage() {
             </div>
             <div>
               <Label>State</Label>
-              <Select onValueChange={(v) => setValue('state', v)}>
+              <Select onValueChange={(v) => setValue('state', v as string)}>
                 <SelectTrigger className="mt-1.5">
                   <SelectValue placeholder="Select your state" />
                 </SelectTrigger>

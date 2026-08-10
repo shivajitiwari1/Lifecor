@@ -30,6 +30,7 @@ export default function EligibilityPage() {
   const [riskTier, setRiskTier] = useState<ReturnType<typeof calculateRiskTier>>('preferred')
   const [confidenceScore, setConfidenceScore] = useState(0)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const run = async () => {
       for (let i = 0; i < LOADING_PHASES.length; i++) {
@@ -75,8 +76,8 @@ export default function EligibilityPage() {
                   className="w-16 h-16 rounded-full bg-green-500/20 border-2 border-green-500/40 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-green-400" />
                 </motion.div>
-                <h1 className="text-3xl font-bold mb-1">You're Eligible!</h1>
-                <p className="text-muted-foreground">Great news — here's your profile assessment</p>
+                <h1 className="text-3xl font-bold mb-1">You&apos;re Eligible!</h1>
+                <p className="text-muted-foreground">Great news — here&apos;s your profile assessment</p>
               </div>
 
               <div className="glass-card rounded-2xl p-6 space-y-6">
