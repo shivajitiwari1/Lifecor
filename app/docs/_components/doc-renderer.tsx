@@ -13,7 +13,7 @@ interface DocRendererProps {
 export function DocRenderer({ fileName, title, description, badge }: DocRendererProps) {
   const filePath = path.join(process.cwd(), 'docs', fileName)
   const raw = fs.readFileSync(filePath, 'utf-8')
-  const htmlContent = marked(raw) as string
+  const htmlContent = marked.parse(raw) as string
 
   return (
     <div className="min-h-screen bg-background">
