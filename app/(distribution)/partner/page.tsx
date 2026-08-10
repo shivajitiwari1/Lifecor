@@ -27,11 +27,11 @@ export default function PartnerDashboardPage() {
       </div>
 
       <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 glass-card rounded-2xl p-6">
+        <div className="lg:col-span-2 theme-card rounded-2xl p-6">
           <h2 className="font-semibold mb-4">Policies Issued — Last 12 Months</h2>
           <PoliciesAreaChart data={analyticsData.monthlyPolicies} />
         </div>
-        <div className="glass-card rounded-2xl p-6">
+        <div className="theme-card rounded-2xl p-6">
           <h2 className="font-semibold mb-4">Recent Activity</h2>
           <div className="space-y-4">
             {ACTIVITY.map((a, i) => (

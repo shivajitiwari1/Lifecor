@@ -53,8 +53,18 @@
 }
 @layer utilities {
   .text-gradient { @apply bg-gradient-to-r from-electric-400 to-electric-600 bg-clip-text text-transparent; }
-  .glass-card { @apply bg-white/10 backdrop-blur-sm border border-white/20; }
-  .theme-card { @apply bg-card border border-border backdrop-blur-sm; }
+  .theme-card { @apply bg-card border border-border shadow-sm; }
   .navy-gradient { background: linear-gradient(135deg, #050A14 0%, #0A0F1E 50%, #0F1729 100%); }
   .blue-glow { box-shadow: 0 0 30px rgba(59,130,246,0.3); }
+}
+/* glass-card: dark-bg variant (default) overridden for light mode */
+.glass-card {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+:root:not(.dark) .glass-card {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }

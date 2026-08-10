@@ -12,7 +12,7 @@ export function Confetti() {
     canvas.height = window.innerHeight
 
     const particles: { x: number; y: number; vx: number; vy: number; color: string; size: number; rotation: number; vr: number }[] = []
-    const colors = ['#3B82F6', '#60A5FA', '#2563EB', '#FFFFFF', '#93C5FD']
+    const colors = ['#3B82F6', '#60A5FA', '#2563EB', '#A78BFA', '#93C5FD']
 
     for (let i = 0; i < 120; i++) {
       particles.push({
