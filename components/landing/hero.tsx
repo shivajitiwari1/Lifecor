@@ -39,7 +39,7 @@ export function Hero() {
               href="/partner"
               className={cn(
                 buttonVariants({ variant: 'outline', size: 'lg' }),
-                '!bg-transparent border-white/20 hover:border-white/40 hover:!bg-white/10 text-white px-8 h-12 text-base'
+                '!bg-transparent border-white/50 hover:border-white/80 hover:!bg-white/10 text-white px-8 h-12 text-base'
               )}
             >
               <Play className="mr-2 w-4 h-4" />Partner Experience
