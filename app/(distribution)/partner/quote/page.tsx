@@ -56,7 +56,7 @@ export default function QuoteGeneratorPage() {
           </div>
           <div>
             <Label>State</Label>
-            <Select onValueChange={v => setValue('state', v)}>
+            <Select onValueChange={(v) => setValue('state', v as string)}>
               <SelectTrigger className="mt-1.5"><SelectValue placeholder="Select state" /></SelectTrigger>
               <SelectContent>
                 {US_STATES.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
