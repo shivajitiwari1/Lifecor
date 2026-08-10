@@ -38,7 +38,7 @@ export function InviteModal({ open, onClose }: InviteModalProps) {
           </div>
           <div>
             <Label>Role</Label>
-            <Select onValueChange={setRole}>
+            <Select onValueChange={(v: string | null) => setRole(v ?? '')}>
               <SelectTrigger className="mt-1.5"><SelectValue placeholder="Select role" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="agent">Agent</SelectItem>
