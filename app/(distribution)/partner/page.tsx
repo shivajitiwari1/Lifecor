@@ -1,50 +1,70 @@
-import { Users, TrendingUp, FileText, Shield } from 'lucide-react'
-import { KPICard } from '@/components/distribution/kpi-card'
-import { PoliciesAreaChart } from '@/components/distribution/area-chart'
+'use client'
+import { motion } from 'framer-motion'
 import analyticsData from '@/mock-data/analytics.json'
+import leads from '@/mock-data/leads.json'
+import { PulseStat } from '@/components/distribution/pulse-stat'
+import { SwimlanePipeline } from '@/components/distribution/swimlane-pipeline'
+import { useChartColors } from '@/hooks/use-chart-colors'
 
-const ACTIVITY = [
-  { text: 'James Carter policy approved', time: '2 min ago', type: 'success' },
-  { text: 'New lead: David Williams submitted', time: '18 min ago', type: 'info' },
-  { text: 'Quote generated for Lisa Johnson', time: '1 hr ago', type: 'info' },
-  { text: 'Application submitted: Brian Thomas', time: '2 hrs ago', type: 'info' },
-  { text: 'Christopher Wilson policy approved', time: '3 hrs ago', type: 'success' },
-]
+export default function CommandPage() {
+  useChartColors() // ensure theme detection fires
 
-export default function PartnerDashboardPage() {
+  const monthlyData = analyticsData.monthlyPolicies
+  const currentMonth = monthlyData[monthlyData.length - 1]
+  const prevMonth = monthlyData[monthlyData.length - 2]
+  const pctChange = prevMonth
+    ? Math.round(((currentMonth.policies - prevMonth.policies) / prevMonth.policies) * 100)
+    : 0
+  const trend = pctChange >= 0
+    ? `↑ ${pctChange}% ahead of last month`
+    : `↓ ${Math.abs(pctChange)}% behind last month`
+
+  const sparkData = monthlyData.slice(-10).map(d => ({ v: d.policies }))
+
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Dashboard</h1>
-        <p className="text-muted-foreground text-sm mt-1">Welcome back, Sarah. Here&apos;s what&apos;s happening today.</p>
-      </div>
+    <div className="h-full flex flex-col">
+      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
+        <h1 className="text-2xl font-bold">Command</h1>
+        <p className="text-muted-foreground text-sm mt-1">Your live view — everything in one place.</p>
+      </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <KPICard label="Total Leads" value="247" rawValue={247} change="+12% this month" icon={<Users className="w-5 h-5 text-electric-400" />} />
-        <KPICard label="Conversion Rate" value="34.2%" rawValue={34.2} change="+4.1% vs last month" icon={<TrendingUp className="w-5 h-5 text-electric-400" />} />
-        <KPICard label="Applications" value="89" rawValue={89} change="+7 this week" icon={<FileText className="w-5 h-5 text-electric-400" />} />
-        <KPICard label="Policies Issued" value="61" rawValue={61} change="+8 this month" icon={<Shield className="w-5 h-5 text-electric-400" />} />
-      </div>
-
-      <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 theme-card rounded-2xl p-6">
-          <h2 className="font-semibold mb-4">Policies Issued — Last 12 Months</h2>
-          <PoliciesAreaChart data={analyticsData.monthlyPolicies} />
-        </div>
-        <div className="theme-card rounded-2xl p-6">
-          <h2 className="font-semibold mb-4">Recent Activity</h2>
-          <div className="space-y-4">
-            {ACTIVITY.map((a, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${a.type === 'success' ? 'bg-green-400' : 'bg-electric-400'}`} />
-                <div>
-                  <p className="text-sm">{a.text}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{a.time}</p>
-                </div>
-              </div>
-            ))}
+      <div className="grid lg:grid-cols-5 gap-8 flex-1 min-h-0">
+        {/* Left — Pulse */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+          className="lg:col-span-2 theme-card rounded-2xl p-8 flex flex-col justify-between"
+        >
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-6">
+              This Month
+            </p>
+            <PulseStat
+              value={currentMonth.policies}
+              trend={trend}
+              sparkData={sparkData}
+            />
           </div>
-        </div>
+        </motion.div>
+
+        {/* Right — Swimlane */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+          className="lg:col-span-3 theme-card rounded-2xl p-6 flex flex-col min-h-[480px]"
+        >
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Live Pipeline
+            </p>
+            <span className="text-xs text-muted-foreground">{leads.length} leads</span>
+          </div>
+          <div className="flex-1 min-h-0">
+            <SwimlanePipeline leads={leads} />
+          </div>
+        </motion.div>
       </div>
     </div>
   )
