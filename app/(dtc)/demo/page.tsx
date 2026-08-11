@@ -1,79 +1,127 @@
 'use client'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useDemoSession } from '@/hooks/useDemoSession'
+import { ConversationalField } from '@/components/dtc/conversational-field'
+import { ConfirmedChip } from '@/components/dtc/confirmed-chip'
 
-const US_STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+const US_STATES = [
+  { value: 'AL', label: 'Alabama' }, { value: 'AK', label: 'Alaska' },
+  { value: 'AZ', label: 'Arizona' }, { value: 'AR', label: 'Arkansas' },
+  { value: 'CA', label: 'California' }, { value: 'CO', label: 'Colorado' },
+  { value: 'CT', label: 'Connecticut' }, { value: 'DE', label: 'Delaware' },
+  { value: 'FL', label: 'Florida' }, { value: 'GA', label: 'Georgia' },
+  { value: 'HI', label: 'Hawaii' }, { value: 'ID', label: 'Idaho' },
+  { value: 'IL', label: 'Illinois' }, { value: 'IN', label: 'Indiana' },
+  { value: 'IA', label: 'Iowa' }, { value: 'KS', label: 'Kansas' },
+  { value: 'KY', label: 'Kentucky' }, { value: 'LA', label: 'Louisiana' },
+  { value: 'ME', label: 'Maine' }, { value: 'MD', label: 'Maryland' },
+  { value: 'MA', label: 'Massachusetts' }, { value: 'MI', label: 'Michigan' },
+  { value: 'MN', label: 'Minnesota' }, { value: 'MS', label: 'Mississippi' },
+  { value: 'MO', label: 'Missouri' }, { value: 'MT', label: 'Montana' },
+  { value: 'NE', label: 'Nebraska' }, { value: 'NV', label: 'Nevada' },
+  { value: 'NH', label: 'New Hampshire' }, { value: 'NJ', label: 'New Jersey' },
+  { value: 'NM', label: 'New Mexico' }, { value: 'NY', label: 'New York' },
+  { value: 'NC', label: 'North Carolina' }, { value: 'ND', label: 'North Dakota' },
+  { value: 'OH', label: 'Ohio' }, { value: 'OK', label: 'Oklahoma' },
+  { value: 'OR', label: 'Oregon' }, { value: 'PA', label: 'Pennsylvania' },
+  { value: 'RI', label: 'Rhode Island' }, { value: 'SC', label: 'South Carolina' },
+  { value: 'SD', label: 'South Dakota' }, { value: 'TN', label: 'Tennessee' },
+  { value: 'TX', label: 'Texas' }, { value: 'UT', label: 'Utah' },
+  { value: 'VT', label: 'Vermont' }, { value: 'VA', label: 'Virginia' },
+  { value: 'WA', label: 'Washington' }, { value: 'WV', label: 'West Virginia' },
+  { value: 'WI', label: 'Wisconsin' }, { value: 'WY', label: 'Wyoming' },
+]
 
-const schema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  age: z.coerce.number().min(18, 'Must be at least 18').max(75, 'Maximum age is 75'),
-  state: z.string().min(1, 'Please select a state'),
-})
-type FormData = z.infer<typeof schema>
+type Step = 'name' | 'age' | 'state'
 
-export default function WelcomePage() {
+export default function DemoPage() {
   const router = useRouter()
   const { setField } = useDemoSession()
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) })
+  const [step, setStep] = useState<Step>('name')
+  const [confirmedName, setConfirmedName] = useState('')
+  const [confirmedAge, setConfirmedAge] = useState('')
 
-  const onSubmit = (data: FormData) => {
-    setField('name', data.name)
-    setField('age', data.age)
-    setField('state', data.state)
+  const handleName = (val: string) => {
+    setField('name', val)
+    setConfirmedName(val)
+    setStep('age')
+  }
+
+  const handleAge = (val: string) => {
+    setField('age', parseInt(val))
+    setConfirmedAge(val)
+    setStep('state')
+  }
+
+  const handleState = (val: string) => {
+    setField('state', val)
     router.push('/demo/lifestyle')
   }
 
+  const topProgress = step === 'name' ? '10%' : step === 'age' ? '50%' : '90%'
+
   return (
-    <>
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-navy-950 flex flex-col items-center justify-center px-6 relative overflow-hidden">
+      {/* Orb */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-electric-600/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Top progress line (replaces bottom strip on this screen only) */}
+      <div className="fixed top-14 left-0 right-0 h-0.5 bg-muted/40 z-40">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="h-full bg-electric-500"
+          animate={{ width: topProgress }}
           transition={{ duration: 0.4 }}
-          className="w-full max-w-md"
-        >
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2">Welcome to Lifecor</h1>
-            <p className="text-muted-foreground">Let&apos;s get you covered in minutes. Tell us a bit about yourself.</p>
-          </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            <div>
-              <Label htmlFor="name">Full Name</Label>
-              <Input id="name" placeholder="Jane Smith" className="mt-1.5" {...register('name')} />
-              {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
-            </div>
-            <div>
-              <Label htmlFor="age">Age</Label>
-              <Input id="age" type="number" placeholder="32" className="mt-1.5" {...register('age')} />
-              {errors.age && <p className="text-red-400 text-sm mt-1">{errors.age.message}</p>}
-            </div>
-            <div>
-              <Label>State</Label>
-              <Select onValueChange={(v) => setValue('state', v as string)}>
-                <SelectTrigger className="mt-1.5">
-                  <SelectValue placeholder="Select your state" />
-                </SelectTrigger>
-                <SelectContent>
-                  {US_STATES.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
-                </SelectContent>
-              </Select>
-              {errors.state && <p className="text-red-400 text-sm mt-1">{errors.state.message}</p>}
-            </div>
-            <Button type="submit" className="w-full bg-electric-600 hover:bg-electric-700 text-white h-12 text-base font-semibold mt-2">
-              Continue <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </form>
-        </motion.div>
+        />
       </div>
-    </>
+
+      {/* Confirmed chips */}
+      <div className="flex gap-3 mb-12 flex-wrap justify-center min-h-8">
+        <AnimatePresence>
+          {confirmedName && <ConfirmedChip key="name" label="Name" value={confirmedName} />}
+          {confirmedAge && <ConfirmedChip key="age" label="Age" value={confirmedAge} />}
+        </AnimatePresence>
+      </div>
+
+      {/* Active question */}
+      <AnimatePresence mode="wait">
+        {step === 'name' && (
+          <ConversationalField
+            key="name"
+            question="Before we start — what's your name?"
+            placeholder="Jane Smith"
+            validate={v => v.trim().length < 2 ? 'Name must be at least 2 characters' : null}
+            onConfirm={handleName}
+            autoFocus
+          />
+        )}
+        {step === 'age' && (
+          <ConversationalField
+            key="age"
+            question={`And how old are you, ${confirmedName}?`}
+            placeholder="32"
+            type="number"
+            validate={v => {
+              const n = parseInt(v)
+              return isNaN(n) || n < 18 || n > 75 ? 'Age must be between 18 and 75' : null
+            }}
+            onConfirm={handleAge}
+            autoFocus
+          />
+        )}
+        {step === 'state' && (
+          <ConversationalField
+            key="state"
+            question="Which state do you live in?"
+            type="select"
+            options={US_STATES}
+            validate={v => !v ? 'Please select a state' : null}
+            onConfirm={handleState}
+            autoFocus
+          />
+        )}
+      </AnimatePresence>
+    </div>
   )
 }
