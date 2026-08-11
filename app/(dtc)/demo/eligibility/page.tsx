@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { useDemoSession } from '@/hooks/useDemoSession'
 import { calculateRiskTier, calculateConfidenceScore } from '@/lib/mock-ai'
 import { sleep } from '@/lib/utils'
+import { OrbitalLoader } from '@/components/dtc/orbital-loader'
 
 const LOADING_PHASES = [
   'Analyzing your profile...',
@@ -26,12 +27,16 @@ export default function EligibilityPage() {
   const { session, setField } = useDemoSession()
   const [phase, setPhase] = useState<'loading' | 'results'>('loading')
   const [loadingIndex, setLoadingIndex] = useState(0)
+  const [orbitalPhase, setOrbitalPhase] = useState(0)
   const [riskTier, setRiskTier] = useState<ReturnType<typeof calculateRiskTier>>('preferred')
   const [confidenceScore, setConfidenceScore] = useState(0)
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const run = async () => {
+      setTimeout(() => setOrbitalPhase(1), 900)
+      setTimeout(() => setOrbitalPhase(2), 1800)
+      setTimeout(() => setOrbitalPhase(3), 2700)
       for (let i = 0; i < LOADING_PHASES.length; i++) {
         setLoadingIndex(i)
         await sleep(1000)
@@ -51,20 +56,8 @@ export default function EligibilityPage() {
     <div className="flex-1 flex items-center justify-center px-4 py-12">
       <AnimatePresence mode="wait">
         {phase === 'loading' ? (
-          <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center max-w-md w-full">
-            <div className="w-20 h-20 rounded-full border-4 border-electric-600/30 border-t-electric-600 animate-spin mx-auto mb-8" />
-            <h2 className="text-2xl font-bold mb-2">AI Analysis in Progress</h2>
-            <AnimatePresence mode="wait">
-              <motion.p key={loadingIndex} initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -5 }}
-                className="text-muted-foreground text-lg">
-                {LOADING_PHASES[loadingIndex]}
-              </motion.p>
-            </AnimatePresence>
-            <div className="flex justify-center gap-2 mt-6">
-              {LOADING_PHASES.map((_, i) => (
-                <div key={i} className={`w-2 h-2 rounded-full transition-all duration-300 ${i <= loadingIndex ? 'bg-electric-500' : 'bg-muted'}`} />
-              ))}
-            </div>
+          <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center">
+            <OrbitalLoader phase={orbitalPhase} />
           </motion.div>
         ) : (
           <motion.div key="results" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }} className="w-full max-w-lg">
