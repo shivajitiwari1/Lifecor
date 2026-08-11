@@ -2,15 +2,14 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Shield, LayoutDashboard, Users, GitBranch, Calculator, BarChart3 } from 'lucide-react'
+import { Menu, X, Shield, Command, Users, Calculator, BarChart3 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const NAV = [
-  { href: '/partner', icon: LayoutDashboard, label: 'Dashboard' },
-  { href: '/partner/pipeline', icon: GitBranch, label: 'Lead Pipeline' },
-  { href: '/partner/clients', icon: Users, label: 'Clients' },
-  { href: '/partner/quote', icon: Calculator, label: 'Quote Generator' },
-  { href: '/partner/analytics', icon: BarChart3, label: 'Analytics' },
+  { href: '/partner', label: 'Command', icon: Command },
+  { href: '/partner/clients', label: 'Clients', icon: Users },
+  { href: '/partner/quote', label: 'Quote Generator', icon: Calculator },
+  { href: '/partner/analytics', label: 'Analytics', icon: BarChart3 },
 ]
 
 export function MobileHeader() {
