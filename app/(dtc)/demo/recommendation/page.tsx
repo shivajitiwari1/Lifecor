@@ -38,11 +38,6 @@ export default function RecommendationPage() {
     <>
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2">AI Recommendation</h1>
-            <p className="text-muted-foreground">Based on your profile, here&apos;s what we recommend</p>
-          </motion.div>
-
           {showMessage && (
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-5 mb-6 flex gap-4">
               <div className="w-10 h-10 rounded-full bg-electric-600/20 border border-electric-600/30 flex items-center justify-center flex-shrink-0">
@@ -53,7 +48,7 @@ export default function RecommendationPage() {
                   <span className="text-sm font-semibold text-electric-400">Lifecor AI</span>
                   <Sparkles className="w-3 h-3 text-electric-400" />
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{message}</p>
+                <p className="text-lg text-muted-foreground leading-relaxed">{message}</p>
               </div>
             </motion.div>
           )}
@@ -73,6 +68,15 @@ export default function RecommendationPage() {
               </div>
             </motion.div>
           )}
+
+          {showPlan && (
+  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+    className="text-sm text-muted-foreground text-center mb-4">
+    At{' '}
+    <span className="text-electric-400 capitalize">{session.riskTier?.replace('-', ' ') ?? 'preferred'} rates</span>
+    {' '}— you&apos;re getting our best pricing.
+  </motion.p>
+)}
 
           {showPlan && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>

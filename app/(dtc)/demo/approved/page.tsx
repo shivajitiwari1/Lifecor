@@ -33,9 +33,9 @@ export default function ApprovedPage() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-            className="w-24 h-24 rounded-full bg-green-500/20 border-4 border-green-500/40 flex items-center justify-center mx-auto mb-6"
+            className="w-40 h-40 rounded-full bg-green-500/20 border-4 border-green-500/40 flex items-center justify-center mx-auto mb-6"
           >
-            <CheckCircle className="w-12 h-12 text-green-400" />
+            <CheckCircle className="w-16 h-16 text-green-400" />
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
@@ -43,6 +43,7 @@ export default function ApprovedPage() {
               {session.name ? `${session.name.split(' ')[0]}, you're` : "You're"}{' '}
               <span className="text-gradient">Approved!</span>
             </h1>
+            <p className="text-amber-400 font-medium text-lg mt-2">Your policy is active right now.</p>
             <p className="text-muted-foreground text-lg mb-10">
               Welcome to Lifecor. Your coverage is now active.
             </p>
@@ -58,9 +59,18 @@ export default function ApprovedPage() {
             <div className="space-y-4">
               {NEXT_STEPS.map((step) => (
                 <div key={step.title} className="flex items-start gap-4">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${step.done ? 'bg-green-500/20 border border-green-500/40' : 'bg-muted border border-border'}`}>
-                    <step.icon className={`w-4 h-4 ${step.done ? 'text-green-400' : 'text-muted-foreground'}`} />
-                  </div>
+                  {step.done ? (
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-green-500/20 border border-green-500/40">
+                      <span className="relative flex h-3 w-3">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-muted border border-border">
+                      <step.icon className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  )}
                   <div>
                     <div className="font-medium text-sm">{step.title}</div>
                     <div className="text-muted-foreground text-xs mt-0.5">{step.description}</div>
@@ -75,7 +85,7 @@ export default function ApprovedPage() {
               href="/partner"
               className={cn(buttonVariants(), 'bg-electric-600 hover:bg-electric-700 text-white h-12 px-8')}
             >
-              Explore Partner Experience <ArrowRight className="ml-2 w-4 h-4" />
+              See how agents use Lifecor <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </motion.div>
         </div>
