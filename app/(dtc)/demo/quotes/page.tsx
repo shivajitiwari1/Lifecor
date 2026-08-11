@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { StepProgress } from '@/components/dtc/step-progress'
 import { QuoteCard } from '@/components/dtc/quote-card'
 import { useDemoSession } from '@/hooks/useDemoSession'
 import { generateQuoteResult } from '@/lib/mock-ai'
@@ -27,7 +26,6 @@ export default function QuotesPage() {
 
   return (
     <>
-      <StepProgress currentStep={4} />
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="text-center mb-10">

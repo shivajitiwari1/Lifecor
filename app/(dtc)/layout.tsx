@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Shield } from 'lucide-react'
+import { DtcProgressBar } from '@/components/dtc/dtc-progress-bar'
 
 export default function DTCLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,9 +13,10 @@ export default function DTCLayout({ children }: { children: React.ReactNode }) {
           <span className="text-lg font-bold">Lifecor</span>
         </Link>
       </header>
-      <main className="flex-1 flex flex-col">
+      <main className="flex-1 flex flex-col pb-16">
         {children}
       </main>
+      <DtcProgressBar />
     </div>
   )
 }

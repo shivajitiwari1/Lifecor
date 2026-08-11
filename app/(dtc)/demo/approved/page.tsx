@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Mail, FileText, Calendar } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { StepProgress } from '@/components/dtc/step-progress'
 import { Confetti } from '@/components/dtc/confetti'
 import { useDemoSession } from '@/hooks/useDemoSession'
 
@@ -28,7 +27,6 @@ export default function ApprovedPage() {
   return (
     <>
       {showConfetti && <Confetti />}
-      <StepProgress currentStep={7} />
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-lg text-center">
           <motion.div

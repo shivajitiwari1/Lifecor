@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { StepProgress } from '@/components/dtc/step-progress'
 import { ToggleCard } from '@/components/dtc/toggle-card'
 import { useDemoSession } from '@/hooks/useDemoSession'
 import type { DTCSession } from '@/types'
@@ -31,7 +30,6 @@ export default function LifestylePage() {
 
   return (
     <>
-      <StepProgress currentStep={2} />
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="w-full max-w-lg">
           <div className="flex items-center justify-between mb-8">

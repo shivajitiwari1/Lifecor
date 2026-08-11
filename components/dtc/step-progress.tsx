@@ -1,47 +1,25 @@
 'use client'
-import { Check } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 
-const STEPS = [
-  { n: 1, label: 'Welcome' },
-  { n: 2, label: 'Lifestyle' },
-  { n: 3, label: 'Eligibility' },
-  { n: 4, label: 'Quotes' },
-  { n: 5, label: 'Recommendation' },
-  { n: 6, label: 'Summary' },
-  { n: 7, label: 'Approved' },
-]
+const STEPS = ['Welcome', 'Lifestyle', 'Eligibility', 'Quotes', 'Recommendation', 'Summary', 'Approved']
 
 export function StepProgress({ currentStep }: { currentStep: number }) {
+  const progress = ((currentStep - 1) / (STEPS.length - 1)) * 100
   return (
-    <div className="w-full bg-background/95 backdrop-blur border-b border-border px-4 py-3">
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center justify-between">
-          {STEPS.map((step, i) => (
-            <div key={step.n} className="flex items-center">
-              <div className="flex flex-col items-center">
-                <div className={cn(
-                  'w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all duration-300',
-                  step.n < currentStep && 'bg-electric-600 text-white',
-                  step.n === currentStep && 'bg-electric-600 text-white ring-4 ring-electric-600/30',
-                  step.n > currentStep && 'bg-muted text-muted-foreground',
-                )}>
-                  {step.n < currentStep ? <Check className="w-4 h-4" /> : step.n}
-                </div>
-                <span className={cn(
-                  'text-[10px] mt-1 hidden sm:block transition-colors',
-                  step.n <= currentStep ? 'text-foreground' : 'text-muted-foreground',
-                )}>{step.label}</span>
-              </div>
-              {i < STEPS.length - 1 && (
-                <div className={cn(
-                  'h-px flex-1 mx-2 transition-all duration-500',
-                  step.n < currentStep ? 'bg-electric-600' : 'bg-border',
-                )} style={{ minWidth: '16px' }} />
-              )}
-            </div>
-          ))}
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-t border-border/40 px-6 py-3">
+      <div className="max-w-2xl mx-auto flex items-center gap-3">
+        <span className="text-xs text-muted-foreground whitespace-nowrap">
+          Step {currentStep} of {STEPS.length}
+        </span>
+        <div className="flex-1 h-1 bg-muted rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-electric-500 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+          />
         </div>
+        <span className="text-xs text-muted-foreground">{STEPS[currentStep - 1]}</span>
       </div>
     </div>
   )

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { User, MapPin, Shield, DollarSign, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { StepProgress } from '@/components/dtc/step-progress'
 import { useDemoSession } from '@/hooks/useDemoSession'
 import { getRecommendedPlan, generateQuoteResult } from '@/lib/mock-ai'
 import { formatCurrency, formatPremium } from '@/lib/formatters'
@@ -36,7 +35,6 @@ export default function SummaryPage() {
 
   return (
     <>
-      <StepProgress currentStep={6} />
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="w-full max-w-lg">
           <div className="text-center mb-8">
