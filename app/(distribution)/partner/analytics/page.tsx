@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { BarChart, Bar, LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { Trophy } from 'lucide-react'
 import analyticsData from '@/mock-data/analytics.json'
 import { useChartColors } from '@/hooks/use-chart-colors'
 
@@ -16,6 +17,10 @@ export default function AnalyticsPage() {
     : tab === '6M' ? analyticsData.monthlyPolicies.slice(-6)
     : analyticsData.monthlyPolicies
 
+  const bestMonth = analyticsData.monthlyPolicies.reduce((best, d) =>
+    d.policies > best.policies ? d : best
+  )
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -30,6 +35,16 @@ export default function AnalyticsPage() {
               {t}
             </button>
           ))}
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-amber-400/10 border border-amber-400/20 mb-6">
+        <Trophy className="w-5 h-5 text-amber-400 flex-shrink-0" />
+        <div>
+          <p className="text-sm font-semibold text-foreground">
+            {bestMonth.month} — {bestMonth.policies} policies
+          </p>
+          <p className="text-xs text-muted-foreground">Your strongest month on record.</p>
         </div>
       </div>
 
