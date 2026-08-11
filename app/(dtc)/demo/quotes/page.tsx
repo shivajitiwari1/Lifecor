@@ -1,55 +1,89 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { QuoteCard } from '@/components/dtc/quote-card'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useDemoSession } from '@/hooks/useDemoSession'
 import { generateQuoteResult } from '@/lib/mock-ai'
-import type { DTCSession } from '@/types'
+import { CoveragePanel } from '@/components/dtc/coverage-panel'
 
 export default function QuotesPage() {
   const router = useRouter()
   const { session, setField } = useDemoSession()
-  const quoteResult = useMemo(() => generateQuoteResult(session), [session])
-  const [selected, setSelected] = useState<DTCSession['selectedPlan']>(session.selectedPlan ?? null)
+  const result = generateQuoteResult(session)
+  const plans = result.plans
+
+  const recommendedIndex = Math.max(plans.findIndex(p => p.recommended), 0)
+  const [currentIndex, setCurrentIndex] = useState(recommendedIndex)
+  const [direction, setDirection] = useState<1 | -1>(1)
+
+  const currentPlan = plans[currentIndex]
+
+  const goTo = (index: number) => {
+    if (index === currentIndex) return
+    setDirection(index > currentIndex ? 1 : -1)
+    setCurrentIndex(index)
+  }
 
   const handleContinue = () => {
-    if (!selected) return
-    setField('selectedPlan', selected)
+    if (!session.selectedPlan) setField('selectedPlan', currentPlan.name.toLowerCase() as 'basic' | 'plus' | 'premium')
     router.push('/demo/recommendation')
   }
 
-  const planKey = (name: string): DTCSession['selectedPlan'] =>
-    name.toLowerCase() as DTCSession['selectedPlan']
-
   return (
-    <>
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-4xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="text-center mb-10">
-            <h1 className="text-3xl font-bold mb-2">Your Personalized Quotes</h1>
-            <p className="text-muted-foreground">Choose the plan that works best for you</p>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {quoteResult.plans.map((plan, i) => (
-              <motion.div key={plan.name} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.1 }}>
-                <QuoteCard
-                  plan={plan}
-                  selected={selected === planKey(plan.name)}
-                  onSelect={() => setSelected(planKey(plan.name))}
-                />
-              </motion.div>
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-12">
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-2xl">
+        <div className="mb-8 text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-electric-400 mb-2">Your Coverage Options</p>
+          <h1 className="text-3xl font-bold text-foreground">Choose your protection</h1>
+        </div>
+
+        <AnimatePresence mode="wait">
+          <CoveragePanel
+            key={currentPlan.name}
+            plan={currentPlan}
+            isRecommended={currentPlan.recommended}
+            isSelected={session.selectedPlan === currentPlan.name.toLowerCase()}
+            onSelect={() => setField('selectedPlan', currentPlan.name.toLowerCase() as 'basic' | 'plus' | 'premium')}
+            direction={direction}
+          />
+        </AnimatePresence>
+
+        {/* Dot nav */}
+        <div className="flex items-center justify-center gap-6 mt-8">
+          <button type="button" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}
+            className="p-2 rounded-full hover:bg-muted transition-colors disabled:opacity-30">
+            <ChevronLeft className="w-5 h-5 text-muted-foreground" />
+          </button>
+          <div className="flex gap-2 items-center">
+            {plans.map((_, i) => (
+              <button key={i} type="button" onClick={() => goTo(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === currentIndex ? 'bg-electric-500 w-6 h-2' : 'bg-muted w-2 h-2'
+                }`}
+              />
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Button onClick={handleContinue} disabled={!selected} className="bg-electric-600 hover:bg-electric-700 text-white h-12 px-10 text-base font-semibold disabled:opacity-40">
-              Continue with {selected ? selected.charAt(0).toUpperCase() + selected.slice(1) : 'Selected Plan'} <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </div>
+          <button type="button" onClick={() => goTo(currentIndex + 1)} disabled={currentIndex === plans.length - 1}
+            className="p-2 rounded-full hover:bg-muted transition-colors disabled:opacity-30">
+            <ChevronRight className="w-5 h-5 text-muted-foreground" />
+          </button>
         </div>
-      </div>
-    </>
+
+        <div className="mt-8 text-center">
+          <motion.button
+            type="button"
+            onClick={handleContinue}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-3 rounded-full bg-electric-600 text-white font-semibold hover:bg-electric-500 transition-colors"
+          >
+            {session.selectedPlan
+              ? `Continue with ${plans.find(plan => plan.name.toLowerCase() === session.selectedPlan)?.name ?? currentPlan.name}`
+              : `Continue with ${currentPlan.name}`}
+          </motion.button>
+        </div>
+      </motion.div>
+    </div>
   )
 }
